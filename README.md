@@ -1,1 +1,1 @@
-# Aixo es un fitxer de prova
+# Projecte P1-G2
