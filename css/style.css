@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-
-
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -104,4 +97,29 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Footer Styles */
+footer {
+  @apply bg-gray-900 text-white text-center py-5;
+}
+
+footer p {
+  @apply text-sm;
+}
+
+footer .social-icons {
+  @apply mt-2;
+}
+
+footer .social-icons a {
+  @apply mx-3 inline-block;
+}
+
+footer .social-icons a img {
+  @apply w-6 h-6 transition-transform duration-300 ease-in-out;
+}
+
+footer .social-icons a:hover img {
+  @apply transform scale-125;
 }
