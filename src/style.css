@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /*
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -18,7 +19,7 @@
 }
 */
 
-/* Footer Styles */
+/****** ESTILS DEL FOOTER ********/
 footer {
   @apply bg-gray-900 text-white text-center py-5;
 }
@@ -42,3 +43,31 @@ footer .social-icons a img {
 footer .social-icons a:hover img {
   @apply transform scale-125;
 }
+
+.social-iconsCSS {
+  display: flex;
+  justify-content: center; /* Centra les icones horizontalment */
+  margin-top: 10px; /* Espai entre el text i les icones */
+}
+
+.social-iconCSS {
+  width: 37.5px; /* Amplada de la icona */
+  height: 34px; /* Altura de la icona */
+  margin: 0 10px; /* Espai entre les icones */
+  transition: transform 0.2s; /* Afegir una transició suau */
+}
+
+.social-iconCSS:hover {
+  transform: scale(1.2); /* Augmenta la icona al passar el ratolí */
+}
+
+/****** FI ESTILS DEL FOOTER ********/
+
+
+
+/****** ESTILS DEL NAVBAR ********/
+
+/****** ESTILS GENERALS *********/
+
+/****** FI ESTILS GENERALS *********/
+
