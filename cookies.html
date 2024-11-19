@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Política de Cookies</title>
+    <link rel="stylesheet" href="src/style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                });
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
+    </script>
+</head>
+<body>
+<header>
+    <div id="navbar-container"></div>
+</header>
+
+
+
+<main class="container mx-auto p-4">
+    <h2 class="text-3xl font-semibold mb-4">Política de Cookies</h2>
+    <p class="mb-4">El nostre lloc web utilitza cookies per millorar la teva experiència d'usuari, analitzar el trànsit i personalitzar el contingut. Aquesta política explica què són les cookies, com les utilitzem i com pots gestionar-les.</p>
+
+    <h3 class="text-2xl font-semibold mb-2">Què són les Cookies?</h3>
+    <p class="mb-4">Les cookies són petits fitxers de text que es guarden al teu dispositiu quan visites una pàgina web. Aquestes cookies s'utilitzen per a diversos propòsits, com recordar les teves preferències o identificar les pàgines més visitades.</p>
+
+    <h3 class="text-2xl font-semibold mb-2">Quines Cookies Utilitzem?</h3>
+    <ul class="list-disc list-inside mb-4">
+        <li><strong>Cookies Necessàries:</strong> Aquestes cookies són essencials per al funcionament bàsic del lloc web (per exemple, per recordar la sessió de l'usuari).</li>
+        <li><strong>Cookies de Rendiment:</strong> Són utilitzades per analitzar com els usuaris utilitzen el nostre lloc web, amb l'objectiu d'optimitzar-lo (per exemple, Google Analytics).</li>
+        <li><strong>Cookies de Funcionalitat:</strong> Permeten personalitzar l'experiència de l'usuari i recordar les preferències que has establert (per exemple, idioma o regió).</li>
+        <li><strong>Cookies Publicitàries:</strong> S'utilitzen per mostrar anuncis personalitzats basats en la teva activitat a la web (per exemple, cookies de xarxes socials com Facebook o Google).</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mb-2">Com Gestionar les Cookies?</h3>
+    <p class="mb-4">Pots gestionar les cookies a través del teu navegador, modificant les preferències de privacitat. A més, si ho desitges, pots bloquejar les cookies d'algunes o totes les categories esmentades. Tingues en compte que si bloqueges algunes cookies, és possible que algunes funcions del lloc no estiguin disponibles.</p>
+
+    <h3 class="text-2xl font-semibold mb-2">Com Modificar la Configuració de Cookies?</h3>
+    <p class="mb-4">Pots canviar les teves preferències de cookies en qualsevol moment fent clic al botó de "Configuració de Cookies" que es troba al peu de pàgina, o bé accedint a la configuració de cookies al teu navegador. Si desitges més informació sobre com fer-ho, pots consultar les instruccions del teu navegador.</p>
+
+    <h3 class="text-2xl font-semibold mb-2">Canvis en la Política de Cookies</h3>
+    <p class="mb-4">Podem actualitzar aquesta política de cookies de tant en tant. Et recomanem que revisis aquesta pàgina periòdicament per estar informat de qualsevol canvi.</p>
+
+    <h3 class="text-2xl font-semibold mb-2">Contacte</h3>
+    <p class="mb-4">Si tens alguna pregunta sobre la nostra política de cookies o sobre com gestionem la teva informació, pots contactar-nos a: <a href="contact.html" class="text-sky-500 hover:underline">Contacte</a></p>
+</main>
+
+<!--INICI FOOTER -->
+    <div id="footer-container"></div>
+<!--FINAL FOOTER -->
+
+</body>
+</html>
