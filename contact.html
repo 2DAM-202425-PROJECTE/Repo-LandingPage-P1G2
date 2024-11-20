@@ -7,6 +7,8 @@
   <title>Contact Us - TableTab</title>
   <script src="javascript/scriptContact.js" defer></script>
   <script src="javascript/scriptCookies.js" defer></script>
+  <script src="javascript/scriptRegister.js" defer></script>
+  <script src="javascript/scriptLogin.js" defer></script>
   <link rel="stylesheet" href="src/style.css">
   <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
   <script>
@@ -21,6 +23,11 @@
               .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
               });
+      fetch('account.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('account-container').innerHTML = data;
+              });
     });
   </script>
 
@@ -29,6 +36,8 @@
 <!--INICI HEADER -->
 <div id="navbar-container"></div>
 <!--FINAL HEADER -->
+
+<div id="account-container"></div>
 
 <div class="contact-page bg-gray-100 py-16">
   <div class="contact-container mx-auto max-w-screen-lg flex flex-wrap items-center justify-between bg-white shadow-lg rounded-lg p-10">

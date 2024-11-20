@@ -7,6 +7,8 @@
   <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
   <link rel="stylesheet" href="src/style.css">
   <script src="javascript/scriptCookies.js" defer></script>
+  <script src="javascript/scriptRegister.js" defer></script>
+  <script src="javascript/scriptLogin.js" defer></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       fetch('navbar.html')
@@ -19,12 +21,18 @@
               .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
               });
+      fetch('account.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('account-container').innerHTML = data;
+              });
     });
   </script>
 </head>
 <body class="bg-gray-50">
 
 <div id="navbar-container"></div>
+<div id="account-container"></div>
 
 <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
   <div class="plan-card-container">

@@ -282,6 +282,12 @@ button {
   color: rgb(255, 255, 255);
   font-size: 1.2em;
 }
+#heading2 {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+}
 
 .field {
   display: flex;
@@ -425,7 +431,7 @@ button {
 }
 
 #register-modal button[type="submit"],
-#register-modal #close-modal {
+#register-modal #close-modal #close-modal2{
   padding: 0.5em;
   border-radius: 5px;
   border: none;
@@ -437,7 +443,7 @@ button {
 }
 
 #register-modal button[type="submit"]:hover,
-#register-modal #close-modal:hover {
+#register-modal #close-modal:hover #close-modal2:hover{
   background-color: black;
   color: white;
 }
@@ -575,7 +581,7 @@ button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #f9f9f9;
+  background-color: rgb(179, 179, 179);
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
