@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plans de Pagament</title>
+  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+  <link rel="stylesheet" href="src/style.css">
+  <script src="javascript/scriptCookies.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('navbar.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+              });
+      fetch('footer.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+              });
+    });
+  </script>
+</head>
+<body class="bg-gray-50">
+
+<div id="navbar-container"></div>
+
+<main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+  <div class="plan-card-container">
+    <!-- Pla Gratuït -->
+    <div class="plan-card">
+      <div class="plan-content">
+        <h3 class="plan-title">Pla Gratuït</h3>
+        <p class="plan-description">Accés bàsic a les funcionalitats</p>
+        <div class="plan-price">Gratis</div>
+        <ul class="mt-4 space-y-2">
+          <li class="plan-feature">Creació de compte</li>
+          <li class="plan-feature">Reserves en temps real</li>
+          <li class="plan-feature">Confirmació per correu electrònic</li>
+        </ul>
+      </div>
+      <div class="flex-grow"></div>
+      <button class="plan-button">Tria Gratuït</button>
+    </div>
+
+    <!-- Pla Premium -->
+    <div class="plan-card">
+      <div class="plan-content">
+        <h3 class="plan-title">Pla Premium</h3>
+        <p class="plan-description">Accés complet a totes les funcionalitats</p>
+        <div class="plan-price">29.99€</div>
+        <ul class="mt-4 space-y-2">
+          <li class="plan-feature">Funcionalitat Avançada 1</li>
+          <li class="plan-feature">Funcionalitat Avançada 2</li>
+          <li class="plan-feature">Funcionalitat Avançada 3</li>
+          <li class="plan-feature">Funcionalitat Avançada 4</li>
+        </ul>
+        <div class="flex-grow"></div>
+      </div>
+      <div class="flex-grow"></div>
+      <button class="plan-button">Tria Premium</button>
+    </div>
+
+    <!-- Pla Empresarial -->
+    <div class="plan-card">
+      <div class="plan-content">
+        <h3 class="plan-title">Pla Empresa</h3>
+        <p class="plan-description">Solució personalitzada per a empreses</p>
+        <div class="plan-price">49.99€</div>
+        <ul class="mt-4 space-y-2">
+          <li class="plan-feature">Funcionalitat Avançada 1</li>
+          <li class="plan-feature">Funcionalitat Avançada 2</li>
+          <li class="plan-feature">Funcionalitat Avançada 3</li>
+          <li class="plan-feature">Funcionalitat Avançada 4</li>
+        </ul>
+      </div>
+      <div class="flex-grow"></div>
+      <button class="plan-button">Tria Empresarial</button>
+    </div>
+  </div>
+
+  </div>
+</main>
+<br>
+<br>
+<br>
+<br>
+
+<div id="footer-container"></div>
+
+
+
+
+<!--INICI COOKIES -->
+<div class="cookie-card z-[9999]" id="cookie-notice">
+  <span class="title">🍪 Avís de Cookies</span>
+  <p class="description">
+    Utilitzem cookies per assegurar-nos que et donem la millor experiència al nostre lloc web.
+    Les cookies són petits fitxers de text que es guarden al teu dispositiu i s'utilitzen per
+    personalitzar la teva experiència, analitzar el trànsit del lloc web i garantir el bon funcionament del nostre lloc.
+    <a href="cookies.html">Llegeix les nostres polítiques de cookies</a>.
+  </p>
+  <div class="actions">
+    <button class="accept" onclick="acceptCookies()">✅ Acceptar</button>
+    <button class="settings" onclick="openCookieSettings()">⚙️ Configuració de Cookies</button>
+  </div>
+</div>
+
+<!-- Modal per configurar cookies -->
+<div id="cookie-settings-modal" class="cookie-settings-modal">
+  <div class="cookie-settings-content">
+    <span class="close" onclick="closeCookieSettings()">❌</span>
+    <h2>⚖️ Configura les teves Cookies</h2>
+    <p>Selecciona les cookies que vols permetre per personalitzar la teva experiència:</p>
+
+    <label>
+      <input type="checkbox" id="necessary-cookies" checked disabled>
+      🍪 Cookies Necessàries (Essencials per al funcionament del lloc)
+    </label><br>
+
+    <label>
+      <input type="checkbox" id="performance-cookies">
+      📈 Cookies de Rendiment (Analitzen l'ús del lloc per millorar-lo)
+    </label><br>
+
+    <label>
+      <input type="checkbox" id="functional-cookies">
+      ⚙️ Cookies de Funcionalitat (Personalitzen la teva experiència)
+    </label><br>
+
+    <label>
+      <input type="checkbox" id="advertising-cookies">
+      📢 Cookies Publicitàries (Mostren anuncis personalitzats)
+    </label><br>
+
+    <div class="modal-actions">
+      <button onclick="saveCookieSettings()">💾 Guardar Configuració</button>
+    </div>
+  </div>
+</div>
+
+<!--FINAL COOKIES -->
+
+</body>
+</html>

@@ -3,71 +3,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="images/logo.png" />
+  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TableTap</title>
-  <script type="module" src="src/main.js"></script>
+  <title>TableTab</title>
 
+  <script type="module" src="src/main.js"></script>
+  <script src="javascript/scriptLogin.js" defer></script>
+  <script src="javascript/scriptRegister.js" defer></script>
+  <script src="javascript/scriptContact.js" defer></script>
+  <script src="javascript/scriptNewsletter.js" defer></script>
+  <script src="javascript/scriptCookies.js" defer></script>
+  <script src="javascript/scriptServeis.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('navbar.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+              });
+      fetch('footer.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+              });
+    });
+  </script>
+  <script src="javascript/scriptCaracterisitques.js"></script>
   <link rel="stylesheet" href="src/style.css">
+  
 
 </head>
 
 <!--INICI HEADER -->
 <body>
 
-<header>
-  <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
-    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-3xl">
-      <a href=" " class="flex items-center">
-        <img src="images/logo.png" class="drop-shadow-xl mr-3 h-6 sm:h-9 invert" alt="TableTap Logo" />
-        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">TableTap</span>
-      </a>
-      <div class="flex items-center lg:order-2">
-        <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a>
-        <a href="#" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 bg-sky-500  hover:bg-sky-600 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">App</a>
-        <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-          <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-        </button>
-      </div>
-      <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-        <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-          <li>
-            <!--                <a href="#" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Home</a>-->
-          </li>
-          <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Serveis</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Preus</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">FAQ's</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Equip</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contacte</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+
+  <div id="navbar-container"></div>
+
+
 <!--FINAL HEADER -->
 
+
+<div class='absolute pointer-events-none inset-0 blur-[100px] max-w-md h-[100px] mx-auto sm:max-w-3xl sm:h-[400px]' style="background: linear-gradient(200.89deg, rgba(169,77,255,0.24) 15.73%, rgba(56,190,255,0.36) 15.74%, rgba(238,75,255,0.24) 56.49%, rgba(79,70,229,0.44) 150.91%)"></div>
+
+<!--LOGIN-->
+<div id="login-form" style="display: none;">
+  <form class="form">
+    <p id="heading">Login</p>
+    <div class="field">
+      <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"></path>
+      </svg>
+      <input autocomplete="off" placeholder="Username" class="input-field" type="text">
+    </div>
+    <div class="field">
+      <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+      </svg>
+      <input placeholder="Password" class="input-field" type="password">
+    </div>
+    <div class="btn">
+      <button class="button1">Login</button>
+      <button id="register-button" class="mt-4 text-blue-500 cursor-pointer hover:underline" onclick="openRegisterModal(event)">Sign Up</button>    </div>
+  </form>
+</div>
+<!--END OF LOGIN-->
+
+<!-- REGISTER -->
+<div id="register-modal" style="display: none;">
+  <form class="form">
+    <h2 id="heading">Register</h2>
+    <div class="field">
+      <input type="text" id="register-username" name="username" class="input-field" placeholder="Username">
+    </div>
+    <div class="field">
+      <input type="password" id="register-password" name="password" class="input-field" placeholder="Password">
+    </div>
+    <div class="field">
+      <input type="email" id="register-email" name="email" class="input-field" placeholder="Email">
+    </div>
+    <div class="btn">
+      <input type="submit" value="Register" class="button1">
+      <button id="close-modal" class="button2" onclick="closeRegisterModal()">Close</button>
+    </div>
+  </form>
+
+</div>
+<!-- FI REGISTER -->
 
 
 <!--INICI HERO -->
 <section class="sm:mt-6 lg:mt-8 mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
   <div class="my-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row">
-    <div class="sm:text-center lg:text-left">
+    <div class="relative sm:text-center lg:text-left">
       <h1 class="text-4xl tracking-tight font-extrabold text-gray-800 sm:text-5xl md:text-6xl">
         <span class="block xl:inline">Benvinguts a</span>
-        <span class="block text-indigo-600 xl:inline">TableTap</span>
+        <span class="block text-indigo-600 xl:inline">TableTab</span>
       </h1>
       <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
         Descobreix la manera més senzilla d'assegurar una taula en els millors restaurants de la ciutat. Amb TableTap, podeu reservar els vostres llocs preferits per menjar en qüestió de segons.
@@ -75,15 +107,9 @@
       <!-- Button Section -->
       <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
         <div class="rounded-md shadow">
-          <a href="#"
+          <a href="plans.html"
              class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10">
             Comença
-          </a>
-        </div>
-        <div class="mt-3 sm:mt-0 sm:ml-3">
-          <a href="#"
-             class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-800 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
-            Demo
           </a>
         </div>
       </div>
@@ -92,36 +118,36 @@
 
 
     <!--   Image Section     -->
-    <div class="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4 grid grid-cols-2 gap-4">
+    <div class="relative lg:inset-y-0 lg:right-0 lg:w-1/2 my-4 grid grid-cols-2 gap-4" id="serveis">
       <!-- Pla Gratuït -->
-      <div class="p-6 bg-gray-100 rounded-lg shadow-lg text-center">
+      <div class="pla-gratuït-box p-6 bg-gray-100 bg-opacity-40 rounded-lg shadow-lg text-center">
         <h3 class="text-2xl font-bold text-gray-800">Pla Gratuït</h3>
         <p class="mt-2 text-gray-600">Accés bàsic a les funcionalitats</p>
         <ul class="mt-4 space-y-2">
           <li class="text-gray-600">Creació de compte</li>
           <li class="text-gray-600">Reserves en temps real</li>
-          <li class="text-gray-600">Confirmació per correu electronic</li>
+          <li class="text-gray-600">Confirmació per correu electrònic</li>
         </ul>
-        <button class="mt-6 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+        <button class="mt-6 pla-gratuït-button bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-transform transform hover:scale-105">
           Tria Gratuït
         </button>
       </div>
 
-      <!-- Pla de Pagament -->
-      <div class="p-6 bg-gray-100 rounded-lg shadow-lg text-center">
-        <h3 class="text-2xl font-bold text-gray-800">Pla Premium</h3>
-        <p class="mt-2 text-gray-600">Accés complet a totes les funcionalitats</p>
-        <ul class="mt-4 space-y-2">
-          <li class="text-gray-600">Funcionalitat Avançada 1</li>
-          <li class="text-gray-600">Funcionalitat Avançada 2</li>
-          <li class="text-gray-600">Funcionalitat Avançada 3</li>
-          <li class="text-gray-600">Funcionalitat Avançada 4</li>
-        </ul>
-        <button class="mt-6 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-          Tria Premium
+      <!-- Resum Plans Avançats -->
+      <div class="pla-avançat-box p-6 bg-gray-100 bg-opacity-40 rounded-lg shadow-lg text-center">
+        <h3 class="text-2xl font-bold text-gray-800">Plans Avançats</h3>
+        <p class="mt-2 text-gray-600">
+          Descobreix els nostres plans avançats per accedir a funcionalitats professionals com estadístiques detallades, suport prioritari i integracions personalitzades.
+        </p>
+        <button onclick="window.location.href='/plans.html'"
+                class="mt-6 pla-avançat-button bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-transform transform hover:scale-105">
+          Veure Plans
         </button>
       </div>
     </div>
+
+
+
 
     <!--   End of Image Section     -->
   </div>
@@ -131,10 +157,192 @@
 
 
 
-<!--INICI SERVEIS -->
 
-<!--FINAL SERVEIS -->
+  <!--INICI SERVEIS -->
+  <!-- FER DOS BOTONS QUE FIEU SOC USUARI/SOC EMPRESA PER MOSTRAR UNA O ALTRA SECCIÓ -->
+  <!-- AL CLICAR EL BOTO OBRIR POPUP AMB MÉS EXPLICACIÓ -->
+  <section class="sm:mt-6 lg:mt-8 mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative overflow-hidden">
+      <!-- Diapositiva per a Usuaris -->
+      <div id="diapositiva-usuari" class="diapositiva">
+        <h2 class="text-3xl font-extrabold text-gray-800 text-center">SERVEIS COMPTE D'USUARI</h2>
+        <p class="mt-3 text-lg text-gray-500 text-center">
+          Descobreix els serveis que oferim per aconseguir la millor experiència en la reserva de taules.
+        </p>
+        <div class="mt-10 grid gap-8 lg:grid-cols-3">
+          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
+            <img alt="Imatge d'Actualització" src="images/actualizar.png" class="w-16 h-16">
+            <h3 class="text-lg font-bold text-gray-800 mt-4">ACTUALITZACIÓ EN TEMPS REAL</h3>
+            <p class="mt-2 text-gray-600 text-center">
+              Mostra les taules disponibles per reservar.
+            </p>
+            <div class="flex-grow"></div>
+            <button onclick="panelUsr('infoActuUsr')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
+              Saber més
+            </button>
+          </div>
+          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
+            <img alt="Imatge de Personalització" src="images/featuresSettings.png" class="w-16 h-16">
+            <h3 class="text-lg font-bold text-gray-800 mt-4">EXPERIÈNCIA PERSONALITZADA</h3>
+            <p class="mt-2 text-gray-600 text-center">
+              Gestió de gustos i necessitats.
+            </p>
+            <div class="flex-grow"></div>
+            <button onclick="panelUsr('infoPersUsr')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
+              Saber més
+            </button>
+          </div>
+          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
+            <img alt="Imatge d'Anàlisi" src="images/featuresGraphic.png" class="w-16 h-16">
+            <h3 class="text-lg font-bold text-gray-800 mt-4">ANÀLISI DE DEMANDA</h3>
+            <p class="mt-2 text-gray-600 text-center">
+              Recomanació d'hores i dies amb menor aglomeració.
+            </p>
+            <div class="flex-grow"></div>
+            <button onclick="panelUsr('infoGrafUsr')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
+              Saber més
+            </button>
+          </div>
+        </div>
+      </div>
 
+      <!-- Diapositiva per a Empreses -->
+      <div id="diapositiva-empresa" class="diapositiva hidden">
+        <h2 class="text-3xl font-extrabold text-gray-800 text-center">SERVEIS COMPTE D'EMPRESA</h2>
+        <p class="mt-3 text-lg text-gray-500 text-center">
+          Descobreix els serveis que oferim per gestionar el teu restaurant de manera eficient.
+        </p>
+        <div class="mt-10 grid gap-8 lg:grid-cols-3">
+          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
+            <img alt="Imatge d'Actualització" src="images/actualizar.png" class="w-16 h-16">
+            <h3 class="text-lg font-bold text-gray-800 mt-4">ACTUALITZACIÓ EN TEMPS REAL</h3>
+            <p class="mt-2 text-gray-600 text-center">
+              Mostra totes les reserves en temps real.
+            </p>
+            <div class="flex-grow"></div>
+            <button onclick="panelEmp('infoActuEmp')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
+              Saber més
+            </button>
+          </div>
+          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
+            <img alt="Imatge de Personalització" src="images/featuresSettings.png" class="w-16 h-16">
+            <h3 class="text-lg font-bold text-gray-800 mt-4">PERSONALITZA EL RESTAURANT</h3>
+            <p class="mt-2 text-gray-600 text-center">
+              Gestiona totes les característiques i esdeveniments.
+            </p>
+            <div class="flex-grow"></div>
+            <button onclick="panelEmp('infoPersEmp')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
+              Saber més
+            </button>
+          </div>
+          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
+            <img alt="Imatge d'Anàlisi" src="images/featuresGraphic.png" class="w-16 h-16">
+            <h3 class="text-lg font-bold text-gray-800 mt-4">ANÀLISI DE DEMANDA</h3>
+            <p class="mt-2 text-gray-600 text-center">
+              Gràfics d'afluència per a una millor gestió.
+            </p>
+            <div class="flex-grow"></div>
+            <button onclick="panelEmp('infoGrafEmp')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
+              Saber més
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls de navegació -->
+      <button onclick="canviarDiapositiva('esquerra')" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 mr-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button onclick="canviarDiapositiva('dreta')" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 ml-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      </div>
+  </section>
+
+  <div id="infoActuEmp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
+      <img src="images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
+      <h2 class="text-2xl font-bold text-gray-800">Actualització en Temps Real</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Amb la funcionalitat de reserves en temps real, la teva empresa tindrà accés immediat a una visió actualitzada de totes les reserves.
+      </p>
+      <button onclick="panelEmp('infoActuEmp')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
+        Tanca
+      </button>
+    </div>
+  </div>
+
+  <div id="infoPersEmp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
+      <img src="images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
+      <h2 class="text-2xl font-bold text-gray-800">Personalitza el Restaurant</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Amb la funcionalitat de personalització del restaurant, pots gestionar fàcilment el menú, l’ambient i els esdeveniments.
+      </p>
+      <button onclick="panelEmp('infoPersEmp')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
+        Tanca
+      </button>
+    </div>
+  </div>
+
+  <div id="infoGrafEmp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
+      <img src="images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
+      <h2 class="text-2xl font-bold text-gray-800">Anàlisi de Demanda</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Accedeix a dades en temps real sobre el volum d’usuaris i ajusta horaris o serveis segons les necessitats.
+      </p>
+      <button onclick="panelEmp('infoGrafEmp')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
+        Tanca
+      </button>
+    </div>
+  </div>
+
+  <div id="infoActuUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
+      <img src="images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
+      <h2 class="text-2xl font-bold text-gray-800">Actualització en Temps Real</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Aquesta funcionalitat permet veure les reserves actualitzades en temps real, assegurant quantes taules hi ha disponibles, en quina zona i de quantes persones.
+      </p>
+      <button onclick="panelUsr('infoActuUsr')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
+        Tanca
+      </button>
+    </div>
+  </div>
+
+  <div id="infoPersUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
+      <img src="images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
+      <h2 class="text-2xl font-bold text-gray-800">Experiència Personalitzada</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Personalitza la teva cerca segons opcions de menú, al·lèrgens, rang de preus, tipus de cuina i altres preferències.
+      </p>
+      <button onclick="panelUsr('infoPersUsr')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
+        Tanca
+      </button>
+    </div>
+  </div>
+
+  <div id="infoGrafUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
+      <img src="images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
+      <h2 class="text-2xl font-bold text-gray-800">Anàlisi de Demanda</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Amb l’anàlisi de demanda, podràs saber quins moments són més tranquils, el temps estimat d’espera i l’afluència en temps real.
+      </p>
+      <button onclick="panelUsr('infoGrafUsr')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
+        Tanca
+      </button>
+    </div>
+  </div>
+  </section>
+
+  <!--FINAL SERVEIS -->
 
 
 <!--INICI PREUS -->
@@ -145,13 +353,152 @@
 
 <!--INICI EQUIP -->
 
+<div id="equip" class="font-[sans-serif] my-40">
+  <div class="max-w-7xl max-lg:max-w-2xl my-4 mx-auto">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-gray-800 text-4xl font-extrabold">EL NOSTRE EQUIP</h2>
+
+    </div>
+
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-14 max-md:justify-center mt-14">
+      <div class="rounded-md overflow-hidden max-md:max-w-[300px] drop-shadow-lg">
+        <div class="flex justify-center object-top  max-md:max-w-[300px]">
+        <img src="https://readymadeui.com/team-1.webp" class="object-contain h-60 rounded-md  border-2" />
+        </div>
+        <div class="p-4 bg-white  border">
+          <h4 class="text-gray-800 text-base font-bold">David Luis</h4>
+          <p class="text-gray-600 text-xs mt-1">Web Developer</p>
+
+          <div class="mt-4">
+            <p class="text-gray-600 text-sm leading-relaxed">David és el nostre expert en desenvolupament web.
+              La seva atenció al detall garanteix que tinguem una presència en línia atractiva i funcional.</p>
+          </div>
+
+          <div class="space-x-4 mt-4">
+            <button type="button"
+                    class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 155.139 155.139">
+                <path
+                        d="M89.584 155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984 2.208-13.425 13.67-13.425l14.595-.006V1.08C115.325.752 106.661 0 96.577 0 75.52 0 61.104 12.853 61.104 36.452v20.341H37.29v27.585h23.814v70.761h28.48z"
+                        data-original="#010002" />
+              </svg>
+            </button>
+            <button type="button"
+                    class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-[#03a9f4] hover:bg-[#03a1f4] active:bg-[#03a9f4]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 512 512">
+                <path
+                        d="M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z"
+                        data-original="#03a9f4" />
+              </svg>
+            </button>
+            <button type="button"
+                    class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-[#0077b5] hover:bg-[#0055b5] active:bg-[#0077b5]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 24 24">
+                <path
+                        d="M23.994 24v-.001H24v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07V7.976H8.489v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24zM.396 7.977h4.976V24H.396zM2.882 0C1.291 0 0 1.291 0 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909A2.884 2.884 0 0 0 2.882 0z"
+                        data-original="#0077b5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-md overflow-hidden max-md:max-w-[300px] drop-shadow-lg">
+        <div class="flex justify-center object-top  max-md:max-w-[300px]">
+          <img src="https://readymadeui.com/team-2.webp" class="object-contain h-60 rounded-md " />
+        </div>
+        <div class="p-4 bg-white  border">
+          <h4 class="text-gray-800 text-base font-bold">Demian Turcan</h4>
+          <p class="text-gray-600 text-xs mt-1">UI Designer</p>
+
+          <div class="mt-4">
+            <p class="text-gray-600 text-sm leading-relaxed">Demian aporta el seu talent creatiu al nostre equip.
+              La seva passió pel disseny es tradueix en una aplicació preciosa i fàcil de navegar.</p>
+          </div>
+
+          <div class="space-x-4 mt-4">
+            <button type="button"
+                    class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 155.139 155.139">
+                <path
+                        d="M89.584 155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984 2.208-13.425 13.67-13.425l14.595-.006V1.08C115.325.752 106.661 0 96.577 0 75.52 0 61.104 12.853 61.104 36.452v20.341H37.29v27.585h23.814v70.761h28.48z"
+                        data-original="#010002" />
+              </svg>
+            </button>
+            <button type="button"
+                    class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-[#03a9f4] hover:bg-[#03a1f4] active:bg-[#03a9f4]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 512 512">
+                <path
+                        d="M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z"
+                        data-original="#03a9f4" />
+              </svg>
+            </button>
+            <button type="button"
+                    class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-[#0077b5] hover:bg-[#0055b5] active:bg-[#0077b5]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 24 24">
+                <path
+                        d="M23.994 24v-.001H24v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07V7.976H8.489v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24zM.396 7.977h4.976V24H.396zM2.882 0C1.291 0 0 1.291 0 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909A2.884 2.884 0 0 0 2.882 0z"
+                        data-original="#0077b5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-md overflow-hidden max-md:max-w-[300px] drop-shadow-lg">
+        <div class="flex justify-center object-top  max-md:max-w-[300px]">
+          <img src="https://readymadeui.com/team-5.webp" class="object-contain h-60 rounded-md  border-2" />
+        </div>
+        <div class="p-4 bg-white  border">
+          <h4 class="text-gray-800 text-base font-bold">Alexander Beltran</h4>
+          <p class="text-gray-600 text-xs mt-1">Software Engineer</p>
+
+          <div class="mt-4">
+            <p class="text-gray-600 text-sm leading-relaxed">Alex és responsable del desenvolupament de programari d'alta qualitat.
+              La seva experiència tècnica ajuda a portar les nostres idees a la realitat.</p>
+          </div>
+
+          <div class="space-x-4 mt-4">
+            <button type="button"
+                    class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 155.139 155.139">
+                <path
+                        d="M89.584 155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984 2.208-13.425 13.67-13.425l14.595-.006V1.08C115.325.752 106.661 0 96.577 0 75.52 0 61.104 12.853 61.104 36.452v20.341H37.29v27.585h23.814v70.761h28.48z"
+                        data-original="#010002" />
+              </svg>
+            </button>
+            <button type="button"
+                    class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-[#03a9f4] hover:bg-[#03a1f4] active:bg-[#03a9f4]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 512 512">
+                <path
+                        d="M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z"
+                        data-original="#03a9f4" />
+              </svg>
+            </button>
+            <button type="button"
+                    class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-[#0077b5] hover:bg-[#0055b5] active:bg-[#0077b5]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 24 24">
+                <path
+                        d="M23.994 24v-.001H24v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07V7.976H8.489v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24zM.396 7.977h4.976V24H.396zM2.882 0C1.291 0 0 1.291 0 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909A2.884 2.884 0 0 0 2.882 0z"
+                        data-original="#0077b5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
 <!--FINAL EQUIP -->
 
 
 
 <!--INICI FAQ -->
 
-<section class="py-10 sm:py-16 lg:py-24">
+<section id="faqs" class="py-10 sm:py-16 lg:py-24">
   <div class="px-4 mx-auto sm:px-6 lg:px-8">
     <div class="max-w-2xl mx-auto text-center">
       <h2 class="text-2xl font-bold leading-tight text-black sm:text-2xl lg:text-4xl">
@@ -274,27 +621,82 @@
 
 <script src="javascript/accordion-faq.js"></script>
 
-
 <!--FINAL FAQ -->
 
+<!--INICI COOKIES -->
+<div class="cookie-card z-[9999]" id="cookie-notice">
+  <span class="title">🍪 Avís de Cookies</span>
+  <p class="description">
+    Utilitzem cookies per assegurar-nos que et donem la millor experiència al nostre lloc web.
+    Les cookies són petits fitxers de text que es guarden al teu dispositiu i s'utilitzen per
+    personalitzar la teva experiència, analitzar el trànsit del lloc web i garantir el bon funcionament del nostre lloc.
+    <a href="cookies.html">Llegeix les nostres polítiques de cookies</a>.
+  </p>
+  <div class="actions">
+    <button class="accept" onclick="acceptCookies()">✅ Acceptar</button>
+    <button class="settings" onclick="openCookieSettings()">⚙️ Configuració de Cookies</button>
+  </div>
+</div>
 
+<!-- Modal per configurar cookies -->
+<div id="cookie-settings-modal" class="cookie-settings-modal">
+  <div class="cookie-settings-content">
+    <span class="close" onclick="closeCookieSettings()">❌</span>
+    <h2>⚖️ Configura les teves Cookies</h2>
+    <p>Selecciona les cookies que vols permetre per personalitzar la teva experiència:</p>
+
+    <label>
+      <input type="checkbox" id="necessary-cookies" checked disabled>
+      🍪 Cookies Necessàries (Essencials per al funcionament del lloc)
+    </label><br>
+
+    <label>
+      <input type="checkbox" id="performance-cookies">
+      📈 Cookies de Rendiment (Analitzen l'ús del lloc per millorar-lo)
+    </label><br>
+
+    <label>
+      <input type="checkbox" id="functional-cookies">
+      ⚙️ Cookies de Funcionalitat (Personalitzen la teva experiència)
+    </label><br>
+
+    <label>
+      <input type="checkbox" id="advertising-cookies">
+      📢 Cookies Publicitàries (Mostren anuncis personalitzats)
+    </label><br>
+
+    <div class="modal-actions">
+      <button onclick="saveCookieSettings()">💾 Guardar Configuració</button>
+    </div>
+  </div>
+</div>
+
+<!--FINAL COOKIES -->
+
+
+<!--INICI NEWSLETTER -->
+<div class="newsletter-popup" id="newsletter-popup">
+  <div class="header">
+    <h3>Newsletter</h3>
+    <button class="close-btn" onclick="closeNewsletterPopup()">×</button>
+  </div>
+  <div class="newsletter-container">
+    <h2>📩 Subscriu-te al nostre newsletter!</h2>
+    <p>Mantén-te informat de totes les novetats i ofertes exclusives.</p>
+    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscriu-me ara!</button>
+    </form>
+  </div>
+</div>
+<!--FINAL NEWSLETTER -->
 
 <!--INICI FOOTER -->
-<footer class="mt-auto">
-  <p>&copy; Made By Grup2 MP13</p>
-  <div class="social-iconsCSS">
-    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-      <img src="images/ig_logo.png" alt="Instagram" class="social-iconCSS"/>
-    </a>
-    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-      <img src="images/fb_logo.png" alt="Facebook" class="social-iconCSS"/>
-    </a>
-    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
-      <img src="images/ln_logo.png" alt="LinkedIn" class="social-iconCSS"/>
-    </a>
-  </div>
-</footer>
+  <div id="footer-container"></div>
 <!--FINAL FOOTER -->
+<div class="inset-0 background"></div>
+
+
 </body>
 
 

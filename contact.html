@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - TableTab</title>
+  <script src="javascript/scriptContact.js" defer></script>
+  <script src="javascript/scriptCookies.js" defer></script>
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('navbar.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+              });
+      fetch('footer.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+              });
+    });
+  </script>
+
+</head>
+<body>
+<!--INICI HEADER -->
+<div id="navbar-container"></div>
+<!--FINAL HEADER -->
+
+<div class="contact-page bg-gray-100 py-16">
+  <div class="contact-container mx-auto max-w-screen-lg flex flex-wrap items-center justify-between bg-white shadow-lg rounded-lg p-10">
+    <!-- Imagen dispositivo -->
+    <div class="device-info flex-1">
+      <img src="images/contactus.png" alt="Contacta amb nosaltres" class="w-full h-auto rounded-lg shadow-md" />
+    </div>
+    <!-- Formulario de contacto -->
+    <div class="contact-form flex-1 ml-8">
+      <h2 class="form-title text-3xl font-semibold text-gray-800 mb-6">Contacta amb nosaltres</h2>
+      <p class="text-gray-600 mb-6">Ens encantaria saber de tu. Si us plau, omple el formulari a continuació i ens posarem en contacte amb tu el més aviat possible.</p>
+      <form>
+        <div class="form-group mb-4">
+          <label for="name" class="text-sm font-medium text-gray-700">El teu nom</label>
+          <input type="text" id="name" placeholder="Introdueix el teu nom" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required />
+        </div>
+        <div class="form-group mb-4">
+          <label for="email" class="text-sm font-medium text-gray-700">El teu correu electrònic</label>
+          <input type="email" id="email" placeholder="Introdueix el teu correu electrònic" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required />
+        </div>
+        <div class="form-group mb-6">
+          <label for="message" class="text-sm font-medium text-gray-700">El teu missatge</label>
+          <textarea id="message" rows="4" placeholder="Introdueix el teu missatge" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" style="resize: none;"></textarea>        </div>
+        <button type="submit" class="submit-btn text-white bg-sky-500 hover:bg-sky-600 font-medium rounded-lg text-sm px-6 py-3 w-full">Enviar missatge</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--INICI COOKIES -->
+<div class="cookie-card z-[9999]" id="cookie-notice">
+  <span class="title">🍪 Avís de Cookies</span>
+  <p class="description">
+    Utilitzem cookies per assegurar-nos que et donem la millor experiència al nostre lloc web.
+    Les cookies són petits fitxers de text que es guarden al teu dispositiu i s'utilitzen per
+    personalitzar la teva experiència, analitzar el trànsit del lloc web i garantir el bon funcionament del nostre lloc.
+    <a href="cookies.html">Llegeix les nostres polítiques de cookies</a>.
+  </p>
+  <div class="actions">
+    <button class="accept" onclick="acceptCookies()">✅ Acceptar</button>
+    <button class="settings" onclick="openCookieSettings()">⚙️ Configuració de Cookies</button>
+  </div>
+</div>
+
+<!-- Modal per configurar cookies -->
+<div id="cookie-settings-modal" class="cookie-settings-modal">
+  <div class="cookie-settings-content">
+    <span class="close" onclick="closeCookieSettings()">❌</span>
+    <h2>⚖️ Configura les teves Cookies</h2>
+    <p>Selecciona les cookies que vols permetre per personalitzar la teva experiència:</p>
+
+    <label>
+      <input type="checkbox" id="necessary-cookies" checked disabled>
+      🍪 Cookies Necessàries (Essencials per al funcionament del lloc)
+    </label><br>
+
+    <label>
+      <input type="checkbox" id="performance-cookies">
+      📈 Cookies de Rendiment (Analitzen l'ús del lloc per millorar-lo)
+    </label><br>
+
+    <label>
+      <input type="checkbox" id="functional-cookies">
+      ⚙️ Cookies de Funcionalitat (Personalitzen la teva experiència)
+    </label><br>
+
+    <label>
+      <input type="checkbox" id="advertising-cookies">
+      📢 Cookies Publicitàries (Mostren anuncis personalitzats)
+    </label><br>
+
+    <div class="modal-actions">
+      <button onclick="saveCookieSettings()">💾 Guardar Configuració</button>
+    </div>
+  </div>
+</div>
+
+<!--FINAL COOKIES -->
+
+<!-- Footer -->
+  <div id="footer-container"></div>
+<!-- Footer -->
+</body>
+</html>

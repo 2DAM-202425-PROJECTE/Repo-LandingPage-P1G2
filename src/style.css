@@ -19,55 +19,887 @@
 }
 */
 
+header {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+header nav {
+  font-size: 1.2rem; /* Augmenta la mida del text */
+}
+
+header .flex {
+  padding: 10px 0; /* Augmenta el padding intern */
+}
+
+header .flex.items-center img {
+  height: 50px; /* Ajusta aquesta mida segons les teves necessitats */
+}
+
+
 /****** ESTILS DEL FOOTER ********/
 footer {
-  @apply bg-gray-900 text-white text-center py-5;
+  background-color: #343a40; /* Fons fosc */
+  color: #f8f9fa; /* Text clar */
+  padding: 40px 20px; /* Més espai al voltant */
+  text-align: center;
+  border-top: 1px solid #495057; /* Línia de separació gris fosc */
 }
 
 footer p {
-  @apply text-sm;
+  margin: 0;
+  color: #f8f9fa; /* Color blanc per al text de drets d'autor */
 }
 
-footer .social-icons {
-  @apply mt-2;
+footer .footer-columns {
+  display: grid; /* Grids per organitzar les columnes */
+  grid-template-columns: repeat(3, 1fr); /* Tres columnes iguals */
+  gap: 20px; /* Espai entre les columnes */
 }
 
-footer .social-icons a {
-  @apply mx-3 inline-block;
-}
-
-footer .social-icons a img {
-  @apply w-6 h-6 transition-transform duration-300 ease-in-out;
-}
-
-footer .social-icons a:hover img {
-  @apply transform scale-125;
-}
-
-.social-iconsCSS {
+footer .footer-column {
   display: flex;
-  justify-content: center; /* Centra les icones horizontalment */
-  margin-top: 10px; /* Espai entre el text i les icones */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.social-iconCSS {
-  width: 37.5px; /* Amplada de la icona */
-  height: 34px; /* Altura de la icona */
-  margin: 0 10px; /* Espai entre les icones */
-  transition: transform 0.2s; /* Afegir una transició suau */
+footer .footer-link {
+  color: #f8f9fa;
+  text-decoration: none;
+  margin: 10px 0;
 }
 
-.social-iconCSS:hover {
-  transform: scale(1.2); /* Augmenta la icona al passar el ratolí */
+footer .footer-link:hover {
+  color: #007bff; /* Color blau per als enllaços al passar el ratolí */
 }
+
+footer .social-iconsCSS {
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center the icons */
+  gap: 20px; /* Space between icons */
+  margin-top: 10px; /* Space above the icons */
+}
+
+footer .social-iconsCSS .card {
+  background: none; /* Remove card background */
+  padding: 0; /* Remove card padding */
+  border: none; /* Remove card border */
+  box-shadow: none; /* Remove card shadow */
+}
+
+footer .social-iconsCSS .card .icon {
+  width: 40px; /* Icon width */
+  height: 40px; /* Icon height */
+}
+
+footer .social-iconsCSS .card .icon svg {
+  width: 100%; /* SVG width */
+  height: 100%; /* SVG height */
+  fill: #6c757d; /* Grey icon color */
+}
+
+footer .social-iconsCSS .card:hover .icon svg {
+  fill: #007bff; /* Blue icon color on hover */
+}
+
+.card {
+  --bg: #f7f7f8;
+  --hover-bg: #FFE5F4;
+  --hover-text: #E50087;
+  max-width: 23ch;
+  text-align: center;
+  background: var(--bg);
+  padding: 1.5em;
+  padding-block: 1.8em;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: .3s cubic-bezier(.6,.4,0,1), transform .15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.card__body {
+  color: #464853;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+.card > :not(span) {
+  transition: .3s cubic-bezier(.6,.4,0,1);
+}
+
+.card > strong {
+  display: block;
+  font-size: 1.4rem;
+  letter-spacing: -.035em;
+}
+
+.card span {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--hover-text);
+  border-radius: 5px;
+  font-weight: bold;
+  top: 100%;
+  transition: all .3s cubic-bezier(.6,.4,0,1);
+}
+
+.card:hover span {
+  top: 0;
+  font-size: 1.2em;
+}
+
+.card:hover {
+  background: var(--hover-bg);
+}
+
+.card:hover > div, .card:hover > strong {
+  opacity: 0;
+}
+
 
 /****** FI ESTILS DEL FOOTER ********/
 
+/****** ESTILS CARACTER ********/
 
 
 /****** ESTILS DEL NAVBAR ********/
+/* From Uiverse.io by Cornerstone-04 */
+.box {
+  width: 140px;
+  height: auto;
+  float: left;
+  transition: .5s linear;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 15px;
+  text-align: center;
+  margin: 0 5px;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.box:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(100%);
+}
+
+.box:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+}
+
+.box:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.box:hover:before {
+  border-color: #ffffff;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .3s;
+}
+
+.box:hover:after {
+  border-color: #ffffff;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .5s;
+}
+
+button {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+/****** FI ESTILS DEL NAVBAR ********/
 
 /****** ESTILS GENERALS *********/
 
 /****** FI ESTILS GENERALS *********/
+
+
+/****** ESTILS DEL LOGIN ********/
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
+}
+
+.form:hover {
+  transform: scale(1.05);
+  border: 1px solid black;
+}
+
+#login-form {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 1000;
+}
+
+#heading {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: white;
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
+}
+
+.form .btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 2.5em;
+}
+
+.button1 {
+  padding: 0.5em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  border-radius: 5px;
+  margin-right: 0.5em;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button1:hover {
+  background-color: black;
+  color: white;
+}
+
+.button2 {
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button2:hover {
+  background-color: black;
+  color: white;
+}
+/****** FI ESTILS DEL LOGIN ********/
+
+/****** ESTILS DEL REGISTER ********/
+#register-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Fons semitransparent */
+  z-index: 2000; /* Superposició més alta */
+}
+
+#register-modal .modal-content {
+  background-color: #171717;
+  border-radius: 25px;
+  padding: 2em;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 28rem;
+  transition: .4s ease-in-out;
+  transform: scale(1);
+  opacity: 1;
+}
+
+#register-modal.show .modal-content {
+  display: block;
+  transform: scale(1.05);
+  border: 1px solid black;
+}
+
+#register-modal .modal-content:hover {
+  transform: scale(1.05);
+  border: 1px solid black;
+}
+
+#register-modal h2 {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+}
+
+#register-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#register-modal label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #d3d3d3;
+  margin-bottom: 0.25rem;
+}
+
+#register-modal input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
+  padding: 0.6em;
+  border-radius: 25px;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+#register-modal button[type="submit"],
+#register-modal #close-modal {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+  cursor: pointer;
+}
+
+#register-modal button[type="submit"]:hover,
+#register-modal #close-modal:hover {
+  background-color: black;
+  color: white;
+}
+/****** FI ESTILS DEL REGISTER ********/
+
+/****** ESTILS DEL CONTACT ********/
+.contact-page {
+  display: flex;
+  justify-content: flex-start; /* Alinea els elements a l'esquerra */
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  padding: 1rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row; /* Col·loca el formulari i el contingut a la mateixa fila */
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px; /* Augmenta la mida màxima per permetre més espai */
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estils per a la secció "device-info" que es col·locarà a l'esquerra */
+.device-info {
+  width: 30%; /* Ajusta aquest valor segons la mida que desitgis */
+  margin-right: 2rem; /* Espai entre les dues seccions */
+  text-align: left;
+}
+
+.contact-form {
+  width: 70%; /* La resta de l'espai es destina al formulari */
+}
+
+/* Títol del formulari */
+.form-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333333;
+}
+
+/* Estil dels grups de formulari */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #555555;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0078ff;
+  box-shadow: 0 0 5px rgba(0, 120, 255, 0.5);
+}
+
+/* Botó d'enviament */
+.submit-btn {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #005fcc;
+}
+
+.contact-page {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background-color: #f4f4f9;
+  padding: 1rem;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.device-info {
+  width: 30%;
+  margin-right: 2rem;
+  text-align: left;
+}
+
+.contact-form {
+  width: 70%;
+  position: relative; /* Ara els loaders es posicionaran dins d'aquest contenidor */
+}
+
+/****** FI ESTILS DEL CONTACT ********/
+
+/****** ESTILS DEL NEWSLETTER ********/
+.newsletter-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.newsletter-popup .header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.newsletter-popup .close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #000000;
+}
+
+.newsletter-popup .newsletter-container {
+  text-align: left;
+  width: 100%;
+}
+
+.newsletter-popup h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-popup p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.newsletter-popup .newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-popup .newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.newsletter-popup .newsletter-form button {
+  padding: 0.5rem 1rem;
+  background-color: #0078ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-popup .newsletter-form button:hover {
+  background-color: #005fcc;
+}
+/****** FI ESTILS DEL NEWSLETTER ********/
+
+/****** ESTILS COOKIES ********/
+.cookie-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  max-width: 400px;
+}
+
+.cookie-card .title {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.cookie-card .description {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.cookie-card .description a {
+  color: #4CAF50;
+  text-decoration: underline;
+}
+
+.cookie-card .actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cookie-card .actions .accept, .cookie-card .actions .settings {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  flex: 1;
+  margin: 5px;
+}
+
+.cookie-card .actions .accept:hover, .cookie-card .actions .settings:hover {
+  background-color: #45a049;
+}
+
+.cookie-card .actions .settings {
+  background-color: #f4b400;
+}
+
+/* Modal de Configuració de Cookies */
+.cookie-settings-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: left;
+  width: 600px;
+  max-width: 90%;
+  z-index: 10000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cookie-settings-content h2 {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cookie-settings-content label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.cookie-settings-content .modal-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cookie-settings-content button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.cookie-settings-content button:hover {
+  background-color: #45a049;
+}
+
+.cookie-settings-content .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2em;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Bloqueig de la pàgina */
+#cookie-blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9998; /* Més baix que el modal, però sobre la pàgina */
+}
+
+
+/****** FI ESTILS COOKIES ********/
+
+/****** ESTILS DELS SERVEIS ********/
+.diapositiva {
+  position: absolute; /* Manté totes les diapositives al mateix lloc */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.diapositiva.hidden {
+  opacity: 0; /* Fa desaparèixer la diapositiva visualment */
+  pointer-events: none; /* Evita interaccions amb diapositives amagades */
+}
+
+.diapositiva.entrant {
+  transform: translateX(100%); /* Entra des de la dreta */
+  opacity: 1;
+}
+
+.diapositiva.sortint {
+  transform: translateX(-100%); /* Surt cap a l'esquerra */
+  opacity: 0;
+}
+
+.relative {
+  position: relative; /* El contenidor té un context de posicionament */
+  height: 400px; /* O l'alçada que necessitis per a les diapositives */
+  overflow: hidden; /* Evita que es vegin diapositives fora del contenidor */
+}
+
+/****** FI ESTILS DELS SERVEIS ********/
+
+/****** ESTILS DELS PLANS ********/
+
+/* Estil per als Plans Empresarials */
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 260px;
+  padding: 20px 1px;
+  margin: 20px 0;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(33,150,243,.4), 0 4px 6px -4px rgba(33,150,243,.4);
+  border-radius: 10px;
+  background-color: #6B6ECC;
+  background: linear-gradient(45deg, #04051dea 0%, #2b566e 100%);
+}
+
+.plan-content {
+  padding: 20px;
+}
+
+.plan-price {
+  color: white;
+  font-weight: 800;
+  font-size: 50px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
+}
+
+.plan-description {
+  color: #ffb6c1; /* Color més visible i bonic per a la descripció */
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.plan-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 10px;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.plan-feature {
+  color: #ffdd57; /* Color més viu per a les funcionalitats */
+  font-size: 16px;
+  margin-top: 6px;
+}
+
+.plan-button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: none;
+  outline: none;
+  color: rgb(255 255 255);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .75rem;
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(33 150 243);
+  border-radius: 0.5rem;
+  width: 90%;
+  text-shadow: 0px 4px 18px #2c3442;
+  transition: all 0.3s ease;
+}
+
+.plan-button:hover {
+  background-color: #004d92; /* Canvi de color quan el ratolí passa sobre el botó */
+  box-shadow: 0 4px 12px rgba(0, 77, 146, 0.7);
+}
+
+/* Separació entre els plans */
+.plan-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Afegir espai entre les cards */
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+
+/********** FI ESTILS DELS PLANS **********/
 

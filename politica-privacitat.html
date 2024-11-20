@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Política de Privacitat</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                });
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
+    </script>
+</head>
+<body>
+<header>
+    <div id="navbar-container"></div>
+</header>
+
+<main class="container mx-auto p-4">
+    <h2 class="text-3xl font-semibold mb-4">Política de Privacitat</h2>
+    <p class="mb-4">La teva privacitat és molt important per a nosaltres. Aquesta Política de Privacitat explica com recopilem, utilitzem, compartim i protegim la teva informació personal quan utilitzes els nostres serveis de reserva en línia a TableTab.</p>
+
+    <h3 class="text-2xl font-semibold mb-2">1. Introducció</h3>
+    <p class="mb-4">La teva privacitat és molt important per a nosaltres. Aquesta Política de Privacitat explica com recopilem, utilitzem, compartim i protegim la teva informació personal quan utilitzes els nostres serveis de reserva en línia a TableTab.</p>
+
+    <h3 class="text-2xl font-semibold mb-2">2. Informació que recopilem</h3>
+    <ul class="list-disc list-inside mb-4">
+        <li><strong>Nom complet</strong></li>
+        <li><strong>Correu electrònic</strong></li>
+        <li><strong>Telèfon de contacte</strong></li>
+        <li><strong>Informació de la reserva (data, hora, nombre de persones)</strong></li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mb-2">3. Ús de la teva informació</h3>
+    <p class="mb-4">La informació que recopilem s'utilitza per:</p>
+    <ul class="list-disc list-inside mb-4">
+        <li>Confirmar i gestionar les reserves de taula.</li>
+        <li>Contactar-te per qualsevol canvi o actualització relacionada amb la teva reserva.</li>
+        <li>Millorar els nostres serveis i experiència d'usuari.</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mb-2">4. Protecció de la teva informació</h3>
+    <p class="mb-4">Comptem amb mesures de seguretat per protegir la teva informació personal, incloent l'ús de connexions segures (SSL) en els formularis de reserva i l'emmagatzematge en servidors segurs.</p>
+
+    <h3 class="text-2xl font-semibold mb-2">5. Compartició de la teva informació</h3>
+    <p class="mb-4">No compartim la teva informació personal amb tercers sense el teu consentiment, excepte en els casos següents:</p>
+    <ul class="list-disc list-inside mb-4">
+        <li>Quan sigui necessari per complir amb una obligació legal.</li>
+        <li>Quan sigui necessari per a la prestació del servei (ex. compartir informació amb el restaurant per a confirmar la reserva).</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mb-2">6. Drets de l'usuari</h3>
+    <p class="mb-4">Tens dret a accedir, corregir o eliminar la teva informació personal. Si desitges fer-ho, contacta'ns mitjançant els nostres canals de contacte.</p>
+
+    <h3 class="text-2xl font-semibold mb-2">7. Canvis en la política de privacitat</h3>
+    <p class="mb-4">Ens reservem el dret de modificar aquesta Política de Privacitat en qualsevol moment. Les modificacions seran publicades en aquesta pàgina.</p>
+
+    <h3 class="text-2xl font-semibold mb-2">8. Contacte</h3>
+    <p class="mb-4">Si tens alguna pregunta sobre aquesta Política de Privacitat, pots contactar-nos a través del nostre correu electrònic: <a href="mailto:suport@tabletab.com" class="text-sky-500 hover:underline">suport@tabletab.com</a>.</p>
+</main>
+
+<!-- Footer -->
+    <div id="footer-container"></div>
+<!-- Footer -->
+</body>
+</html>
