@@ -781,3 +781,37 @@ button {
 
 /****** FI ESTILS COOKIES ********/
 
+/****** ESTILS DELS SERVEIS ********/
+.diapositiva {
+  position: absolute; /* Manté totes les diapositives al mateix lloc */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.diapositiva.hidden {
+  opacity: 0; /* Fa desaparèixer la diapositiva visualment */
+  pointer-events: none; /* Evita interaccions amb diapositives amagades */
+}
+
+.diapositiva.entrant {
+  transform: translateX(100%); /* Entra des de la dreta */
+  opacity: 1;
+}
+
+.diapositiva.sortint {
+  transform: translateX(-100%); /* Surt cap a l'esquerra */
+  opacity: 0;
+}
+
+.relative {
+  position: relative; /* El contenidor té un context de posicionament */
+  height: 400px; /* O l'alçada que necessitis per a les diapositives */
+  overflow: hidden; /* Evita que es vegin diapositives fora del contenidor */
+}
+
+/****** FI ESTILS DELS SERVEIS ********/

@@ -16,6 +16,7 @@
   <script src="javascript/scriptContact.js" defer></script>
   <script src="javascript/scriptNewsletter.js" defer></script>
   <script src="javascript/scriptCookies.js" defer></script>
+  <script src="javascript/scriptServeis.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       fetch('navbar.html')
@@ -172,24 +173,59 @@
   <!-- FER DOS BOTONS QUE FIEU SOC USUARI/SOC EMPRESA PER MOSTRAR UNA O ALTRA SECCIÓ -->
   <!-- AL CLICAR EL BOTO OBRIR POPUP AMB MÉS EXPLICACIÓ -->
   <section class="sm:mt-6 lg:mt-8 mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Botons de selecció -->
-    <div class="flex justify-center gap-4 my-8">
-      <button onclick="mostrarSeccio('usuari')" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
-        Sóc Usuari
-      </button>
-      <button onclick="mostrarSeccio('empresa')" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
-        Sóc Empresa
-      </button>
-    </div>
-    <div class="hidden" id="empresa">
-      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <div class="relative overflow-hidden">
+      <!-- Diapositiva per a Usuaris -->
+      <div id="diapositiva-usuari" class="diapositiva">
         <h2 class="text-3xl font-extrabold text-gray-800 text-center">SERVEIS COMPTE D'USUARI</h2>
         <p class="mt-3 text-lg text-gray-500 text-center">
-          Descobreix els serveis que oferim per aconseguir la millor experiència gestionant el teu restaurant.
+          Descobreix els serveis que oferim per aconseguir la millor experiència en la reserva de taules.
         </p>
         <div class="mt-10 grid gap-8 lg:grid-cols-3">
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge de Actualització" src="images/actualizar.png" class="w-16 h-16">
+            <img alt="Imatge d'Actualització" src="images/actualizar.png" class="w-16 h-16">
+            <h3 class="text-lg font-bold text-gray-800 mt-4">ACTUALITZACIÓ EN TEMPS REAL</h3>
+            <p class="mt-2 text-gray-600 text-center">
+              Mostra les taules disponibles per reservar.
+            </p>
+            <div class="flex-grow"></div>
+            <button onclick="panelUsr('infoActuUsr')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
+              Saber més
+            </button>
+          </div>
+          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
+            <img alt="Imatge de Personalització" src="images/featuresSettings.png" class="w-16 h-16">
+            <h3 class="text-lg font-bold text-gray-800 mt-4">EXPERIÈNCIA PERSONALITZADA</h3>
+            <p class="mt-2 text-gray-600 text-center">
+              Gestió de gustos i necessitats.
+            </p>
+            <div class="flex-grow"></div>
+            <button onclick="panelUsr('infoPersUsr')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
+              Saber més
+            </button>
+          </div>
+          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
+            <img alt="Imatge d'Anàlisi" src="images/featuresGraphic.png" class="w-16 h-16">
+            <h3 class="text-lg font-bold text-gray-800 mt-4">ANÀLISI DE DEMANDA</h3>
+            <p class="mt-2 text-gray-600 text-center">
+              Recomanació d'hores i dies amb menor aglomeració.
+            </p>
+            <div class="flex-grow"></div>
+            <button onclick="panelUsr('infoGrafUsr')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
+              Saber més
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diapositiva per a Empreses -->
+      <div id="diapositiva-empresa" class="diapositiva hidden">
+        <h2 class="text-3xl font-extrabold text-gray-800 text-center">SERVEIS COMPTE D'EMPRESA</h2>
+        <p class="mt-3 text-lg text-gray-500 text-center">
+          Descobreix els serveis que oferim per gestionar el teu restaurant de manera eficient.
+        </p>
+        <div class="mt-10 grid gap-8 lg:grid-cols-3">
+          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
+            <img alt="Imatge d'Actualització" src="images/actualizar.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">ACTUALITZACIÓ EN TEMPS REAL</h3>
             <p class="mt-2 text-gray-600 text-center">
               Mostra totes les reserves en temps real.
@@ -199,8 +235,6 @@
               Saber més
             </button>
           </div>
-
-          <!-- Característica: Personalitza el Restaurant -->
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
             <img alt="Imatge de Personalització" src="images/featuresSettings.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">PERSONALITZA EL RESTAURANT</h3>
@@ -212,25 +246,34 @@
               Saber més
             </button>
           </div>
-
-          <!-- Característica: Anàlisi de Demanda -->
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
             <img alt="Imatge d'Anàlisi" src="images/featuresGraphic.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">ANÀLISI DE DEMANDA</h3>
             <p class="mt-2 text-gray-600 text-center">
               Gràfics d'afluència per a una millor gestió.
             </p>
-            <div class="flex-grow"></div> <!-- Alinea el botó a la part inferior -->
+            <div class="flex-grow"></div>
             <button onclick="panelEmp('infoGrafEmp')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
               Saber més
             </button>
           </div>
         </div>
       </div>
-    </div>
 
+      <!-- Controls de navegació -->
+      <button onclick="canviarDiapositiva('esquerra')" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 mr-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button onclick="canviarDiapositiva('dreta')" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 ml-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      </div>
+  </section>
 
-    <!-- Panells Modal -->
   <div id="infoActuEmp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
       <img src="images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
@@ -270,99 +313,44 @@
     </div>
   </div>
 
-    <!-- VISTA PER A USUARIS -->
-    <div class="flex" id="usuari">
-      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <h2 class="text-3xl font-extrabold text-gray-800 text-center">SERVEIS COMPTE D'EMPRESA</h2>
-        <p class="mt-3 text-lg text-gray-500 text-center">
-          Descobreix els serveis que oferim per aconseguir la millor experiència en la reserva de taules.
-        </p>
-
-        <!-- Contenidor de les característiques -->
-        <div class="mt-10 grid gap-8 lg:grid-cols-3">
-
-          <!-- Característica 1: Actualització en Temps Real -->
-          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge d'Actualització" src="images/actualizar.png" class="w-16 h-16">
-            <h3 class="text-lg font-bold text-gray-800 mt-4">ACTUALITZACIÓ EN TEMPS REAL</h3>
-            <p class="mt-2 text-gray-600 text-center">
-              Mostra les taules disponibles per reservar.
-            </p>
-            <div class="flex-grow"></div> <!-- Alinea el botó a la part inferior -->
-            <button onclick="panelUsr('infoActuUsr')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
-              Saber més
-            </button>
-          </div>
-
-          <!-- Característica 2: Experiència Personalitzada -->
-          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge de Personalització" src="images/featuresSettings.png" class="w-16 h-16">
-            <h3 class="text-lg font-bold text-gray-800 mt-4">EXPERIÈNCIA PERSONALITZADA</h3>
-            <p class="mt-2 text-gray-600 text-center">
-              Gestió de gustos i necessitats.
-            </p>
-            <div class="flex-grow"></div> <!-- Alinea el botó a la part inferior -->
-            <button onclick="panelUsr('infoPersUsr')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
-              Saber més
-            </button>
-          </div>
-
-          <!-- Característica 3: Anàlisi de Demanda -->
-          <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge d'Anàlisi" src="images/featuresGraphic.png" class="w-16 h-16">
-            <h3 class="text-lg font-bold text-gray-800 mt-4">ANÀLISI DE DEMANDA</h3>
-            <p class="mt-2 text-gray-600 text-center">
-              Recomanació d'hores i dies amb menor aglomeració.
-            </p>
-            <div class="flex-grow"></div> <!-- Alinea el botó a la part inferior -->
-            <button onclick="panelUsr('infoGrafUsr')" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-transform transform hover:scale-105">
-              Saber més
-            </button>
-          </div>
-        </div>
-      </div>
+  <div id="infoActuUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
+      <img src="images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
+      <h2 class="text-2xl font-bold text-gray-800">Actualització en Temps Real</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Aquesta funcionalitat permet veure les reserves actualitzades en temps real, assegurant quantes taules hi ha disponibles, en quina zona i de quantes persones.
+      </p>
+      <button onclick="panelUsr('infoActuUsr')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
+        Tanca
+      </button>
     </div>
+  </div>
 
-
-    <!-- Panells Modal -->
-    <div id="infoActuUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-      <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-        <img src="images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
-        <h2 class="text-2xl font-bold text-gray-800">Actualització en Temps Real</h2>
-        <p class="text-gray-600 leading-relaxed">
-          Aquesta funcionalitat permet veure les reserves actualitzades en temps real, assegurant quantes taules hi ha disponibles, en quina zona i de quantes persones.
-        </p>
-        <button onclick="panelUsr('infoActuUsr')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
-          Tanca
-        </button>
-      </div>
+  <div id="infoPersUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
+      <img src="images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
+      <h2 class="text-2xl font-bold text-gray-800">Experiència Personalitzada</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Personalitza la teva cerca segons opcions de menú, al·lèrgens, rang de preus, tipus de cuina i altres preferències.
+      </p>
+      <button onclick="panelUsr('infoPersUsr')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
+        Tanca
+      </button>
     </div>
+  </div>
 
-    <div id="infoPersUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-      <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-        <img src="images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
-        <h2 class="text-2xl font-bold text-gray-800">Experiència Personalitzada</h2>
-        <p class="text-gray-600 leading-relaxed">
-          Personalitza la teva cerca segons opcions de menú, al·lèrgens, rang de preus, tipus de cuina i altres preferències.
-        </p>
-        <button onclick="panelUsr('infoPersUsr')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
-          Tanca
-        </button>
-      </div>
+  <div id="infoGrafUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
+      <img src="images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
+      <h2 class="text-2xl font-bold text-gray-800">Anàlisi de Demanda</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Amb l’anàlisi de demanda, podràs saber quins moments són més tranquils, el temps estimat d’espera i l’afluència en temps real.
+      </p>
+      <button onclick="panelUsr('infoGrafUsr')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
+        Tanca
+      </button>
     </div>
-
-    <div id="infoGrafUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-      <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-        <img src="images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
-        <h2 class="text-2xl font-bold text-gray-800">Anàlisi de Demanda</h2>
-        <p class="text-gray-600 leading-relaxed">
-          Amb l’anàlisi de demanda, podràs saber quins moments són més tranquils, el temps estimat d’espera i l’afluència en temps real.
-        </p>
-        <button onclick="panelUsr('infoGrafUsr')" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-400">
-          Tanca
-        </button>
-      </div>
-    </div>
+  </div>
   </section>
 
   <!--FINAL SERVEIS -->
