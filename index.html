@@ -581,7 +581,6 @@
 </section>
 
 <script src="javascript/accordion-faq.js"></script>
-
 <!--FINAL FAQ -->
 
 <!--INICI COOKIES -->
@@ -636,20 +635,27 @@
 
 
 <!--INICI NEWSLETTER -->
-<div class="newsletter-popup" id="newsletter-popup">
-  <div class="header">
-    <h3>Newsletter</h3>
-    <button class="close-btn" onclick="closeNewsletterPopup()">×</button>
+  <div class="newsletter-popup" id="newsletter-popup">
+    <div class="header">
+      <h2>Subscriu-te al Newsletter ✉️</h2>
+      <button class="close-btn" onclick="closeNewsletterPopup()">×</button>
+    </div>
+    <div class="newsletter-container">
+      <p>Estigues al dia amb les nostres últimes notícies i ofertes.</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="thank-you-message hidden" id="thank-you-message">
+      <div class="tick-animation">
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.2l-3.5-3.5 1.4-1.4L9 13.4l7.1-7.1 1.4 1.4z"></path>
+        </svg>
+        <p>Thank you for subscribing!</p>
+      </div>
+    </div>
   </div>
-  <div class="newsletter-container">
-    <h2>📩 Subscriu-te al nostre newsletter!</h2>
-    <p>Mantén-te informat de totes les novetats i ofertes exclusives.</p>
-    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit">Subscriu-me ara!</button>
-    </form>
-  </div>
-</div>
 <!--FINAL NEWSLETTER -->
 
 <!--INICI FOOTER -->
