@@ -120,7 +120,7 @@
     <!--   Image Section     -->
     <div class="relative lg:inset-y-0 lg:right-0 lg:w-1/2 my-4 grid grid-cols-2 gap-4" id="serveis">
       <!-- Pla Gratuït -->
-      <div class="p-6 bg-gray-100 bg-opacity-40 rounded-lg shadow-lg text-center">
+      <div class="pla-gratuït-box p-6 bg-gray-100 bg-opacity-40 rounded-lg shadow-lg text-center">
         <h3 class="text-2xl font-bold text-gray-800">Pla Gratuït</h3>
         <p class="mt-2 text-gray-600">Accés bàsic a les funcionalitats</p>
         <ul class="mt-4 space-y-2">
@@ -128,26 +128,20 @@
           <li class="text-gray-600">Reserves en temps real</li>
           <li class="text-gray-600">Confirmació per correu electrònic</li>
         </ul>
-        <br>
-        <button class="mt-6 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-transform transform hover:scale-105">
+        <button class="mt-6 pla-gratuït-button bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-transform transform hover:scale-105">
           Tria Gratuït
         </button>
       </div>
 
-      <!-- Pla Premium amb l'etiqueta "Premium" -->
-
-      <div class="p-6 bg-gray-100 bg-opacity-40 rounded-lg shadow-lg text-center relative">
-        <h3 class="text-2xl font-bold text-gray-800">Pla Premium</h3>
-        <p class="mt-2 text-gray-600">Accés complet a totes les funcionalitats</p>
-        <ul class="mt-4 space-y-2">
-          <li class="text-gray-600">Funcionalitat Avançada 1</li>
-          <li class="text-gray-600">Funcionalitat Avançada 2</li>
-          <li class="text-gray-600">Funcionalitat Avançada 3</li>
-          <li class="text-gray-600">Funcionalitat Avançada 4</li>
-        </ul>
-        <div class="flex-grow"></div>
-        <button class="mt-6 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-transform transform hover:scale-105">
-          Tria Premium
+      <!-- Resum Plans Avançats -->
+      <div class="pla-avançat-box p-6 bg-gray-100 bg-opacity-40 rounded-lg shadow-lg text-center">
+        <h3 class="text-2xl font-bold text-gray-800">Plans Avançats</h3>
+        <p class="mt-2 text-gray-600">
+          Descobreix els nostres plans avançats per accedir a funcionalitats professionals com estadístiques detallades, suport prioritari i integracions personalitzades.
+        </p>
+        <button onclick="window.location.href='/plans.html'"
+                class="mt-6 pla-avançat-button bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-transform transform hover:scale-105">
+          Veure Plans
         </button>
       </div>
     </div>
