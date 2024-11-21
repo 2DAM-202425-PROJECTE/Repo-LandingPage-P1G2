@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="ca">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plans de Pagament</title>
+  <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
-  <link rel="stylesheet" href="src/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - TableTab</title>
+  <script type="module" src="/javascript/scriptContact.js" defer></script>
   <script type="module" src="/javascript/scriptCookies.js" defer></script>
   <script type="module" src="/javascript/scriptRegister.js" defer></script>
   <script type="module" src="/javascript/scriptLogin.js" defer></script>
+  <link rel="stylesheet" href="../src/style.css">
+  <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
   <script type="module">
     document.addEventListener("DOMContentLoaded", function() {
       fetch('/navbar.html')
@@ -28,77 +30,42 @@
               });
     });
   </script>
-</head>
-<body class="bg-gray-50">
 
+</head>
+<body>
+<!--INICI HEADER -->
 <div id="navbar-container"></div>
+<!--FINAL HEADER -->
+
 <div id="account-container"></div>
 
-<main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-  <div class="plan-card-container">
-    <!-- Pla Gratuït -->
-    <div class="plan-card">
-      <div class="plan-content">
-        <h3 class="plan-title">Pla Gratuït</h3>
-        <p class="plan-description">Accés bàsic a les funcionalitats</p>
-        <div class="plan-price">Gratis</div>
-        <ul class="mt-4 space-y-2">
-          <li class="plan-feature">Creació de compte</li>
-          <li class="plan-feature">Reserves en temps real</li>
-          <li class="plan-feature">Confirmació per correu electrònic</li>
-        </ul>
-      </div>
-      <div class="flex-grow"></div>
-      <button class="plan-button">Tria Gratuït</button>
+<div class="contact-page bg-gray-100 py-16">
+  <div class="contact-container mx-auto max-w-screen-lg flex flex-wrap items-center justify-between bg-white shadow-lg rounded-lg p-10">
+    <!-- Imagen dispositivo -->
+    <div class="device-info flex-1">
+      <img src="/images/contactus.png" alt="Contacta amb nosaltres" class="w-full h-auto rounded-lg shadow-md" />
     </div>
-
-    <!-- Pla Premium -->
-    <div class="plan-card">
-      <div class="plan-content">
-        <h3 class="plan-title">Pla Premium</h3>
-        <p class="plan-description">Accés complet a totes les funcionalitats</p>
-        <div class="plan-price">29.99€</div>
-        <ul class="mt-4 space-y-2">
-          <li class="plan-feature">Funcionalitat Avançada 1</li>
-          <li class="plan-feature">Funcionalitat Avançada 2</li>
-          <li class="plan-feature">Funcionalitat Avançada 3</li>
-          <li class="plan-feature">Funcionalitat Avançada 4</li>
-        </ul>
-        <div class="flex-grow"></div>
-      </div>
-      <div class="flex-grow"></div>
-      <button class="plan-button">Tria Premium</button>
-    </div>
-
-    <!-- Pla Empresarial -->
-    <div class="plan-card">
-      <div class="plan-content">
-        <h3 class="plan-title">Pla Empresa</h3>
-        <p class="plan-description">Solució personalitzada per a empreses</p>
-        <div class="plan-price">49.99€</div>
-        <ul class="mt-4 space-y-2">
-          <li class="plan-feature">Funcionalitat Avançada 1</li>
-          <li class="plan-feature">Funcionalitat Avançada 2</li>
-          <li class="plan-feature">Funcionalitat Avançada 3</li>
-          <li class="plan-feature">Funcionalitat Avançada 4</li>
-        </ul>
-      </div>
-      <div class="flex-grow"></div>
-      <button class="plan-button">Tria Empresarial</button>
+    <!-- Formulario de contacto -->
+    <div class="contact-form flex-1 ml-8">
+      <h2 class="form-title text-3xl font-semibold text-gray-800 mb-6">Contacta amb nosaltres</h2>
+      <p class="text-gray-600 mb-6">Ens encantaria saber de tu. Si us plau, omple el formulari a continuació i ens posarem en contacte amb tu el més aviat possible.</p>
+      <form>
+        <div class="form-group mb-4">
+          <label for="name" class="text-sm font-medium text-gray-700">El teu nom</label>
+          <input type="text" id="name" placeholder="Introdueix el teu nom" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required />
+        </div>
+        <div class="form-group mb-4">
+          <label for="email" class="text-sm font-medium text-gray-700">El teu correu electrònic</label>
+          <input type="email" id="email" placeholder="Introdueix el teu correu electrònic" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required />
+        </div>
+        <div class="form-group mb-6">
+          <label for="message" class="text-sm font-medium text-gray-700">El teu missatge</label>
+          <textarea id="message" rows="4" placeholder="Introdueix el teu missatge" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" style="resize: none;"></textarea>        </div>
+        <button type="submit" class="submit-btn text-white bg-sky-500 hover:bg-sky-600 font-medium rounded-lg text-sm px-6 py-3 w-full">Enviar missatge</button>
+      </form>
     </div>
   </div>
-
-  </div>
-</main>
-<br>
-<br>
-<br>
-<br>
-
-<div id="footer-container"></div>
-
-
-
+</div>
 
 <!--INICI COOKIES -->
 <div class="cookie-card z-[9999]" id="cookie-notice">
@@ -150,5 +117,8 @@
 
 <!--FINAL COOKIES -->
 
+<!-- Footer -->
+  <div id="footer-container"></div>
+<!-- Footer -->
 </body>
 </html>
