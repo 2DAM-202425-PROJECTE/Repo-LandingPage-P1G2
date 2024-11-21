@@ -1,4 +1,4 @@
-import './style.css'
+import '../public/style.css'
 // import '/javascript/scriptCookies.js'
 // import '/javascript/accordion-faq.js'
 // import '/javascript/scriptCaracterisitques.js'
