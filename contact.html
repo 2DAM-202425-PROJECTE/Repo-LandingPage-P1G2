@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+  <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - TableTab</title>
-  <script type="module" src="javascript/scriptContact.js" defer></script>
-  <script type="module" src="javascript/scriptCookies.js" defer></script>
-  <script type="module" src="javascript/scriptRegister.js" defer></script>
-  <script type="module" src="javascript/scriptLogin.js" defer></script>
+  <script type="module" src="/javascript/scriptContact.js" defer></script>
+  <script type="module" src="/javascript/scriptCookies.js" defer></script>
+  <script type="module" src="/javascript/scriptRegister.js" defer></script>
+  <script type="module" src="/javascript/scriptLogin.js" defer></script>
   <link rel="stylesheet" href="src/style.css">
-  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+  <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
   <script type="module">
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('navbar.html')
+      fetch('/navbar.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
               });
-      fetch('footer.html')
+      fetch('/footer.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
               });
-      fetch('account.html')
+      fetch('/account.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('account-container').innerHTML = data;
@@ -43,7 +43,7 @@
   <div class="contact-container mx-auto max-w-screen-lg flex flex-wrap items-center justify-between bg-white shadow-lg rounded-lg p-10">
     <!-- Imagen dispositivo -->
     <div class="device-info flex-1">
-      <img src="images/contactus.png" alt="Contacta amb nosaltres" class="w-full h-auto rounded-lg shadow-md" />
+      <img src="/images/contactus.png" alt="Contacta amb nosaltres" class="w-full h-auto rounded-lg shadow-md" />
     </div>
     <!-- Formulario de contacto -->
     <div class="contact-form flex-1 ml-8">

@@ -3,37 +3,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+  <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TableTab</title>
 
   <script type="module" src="src/main.js"></script>
-  <script src="javascript/scriptLogin.js" defer></script>
-  <script src="javascript/scriptRegister.js" defer></script>
-  <script src="javascript/scriptContact.js" defer></script>
-  <script src="javascript/scriptNewsletter.js" defer></script>
-  <script src="javascript/scriptCookies.js" defer></script>
-  <script src="javascript/scriptServeis.js" defer></script>
+  <script src="/javascript/scriptLogin.js" defer></script>
+  <script src="/javascript/scriptRegister.js" defer></script>
+  <script src="/javascript/scriptContact.js" defer></script>
+  <script src="/javascript/scriptNewsletter.js" defer></script>
+  <script src="/javascript/scriptCookies.js" defer></script>
+  <script src="/javascript/scriptServeis.js" defer></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('navbar.html')
+      fetch('/navbar.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
               });
-      fetch('footer.html')
+      fetch('/footer.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
               });
-      fetch('account.html')
+      fetch('/account.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('account-container').innerHTML = data;
               });
     });
   </script>
-  <script src="javascript/scriptCaracterisitques.js" defer></script>
+  <script src="/javascript/scriptCaracterisitques.js" defer></script>
   <link rel="stylesheet" href="src/style.css">
   
 
@@ -132,7 +132,7 @@
         </p>
         <div class="mt-10 grid gap-8 lg:grid-cols-3">
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge d'Actualització" src="images/actualizar.png" class="w-16 h-16">
+            <img alt="Imatge d'Actualització" src="/images/actualizar.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">ACTUALITZACIÓ EN TEMPS REAL</h3>
             <p class="mt-2 text-gray-600 text-center">
               Mostra les taules disponibles per reservar.
@@ -143,7 +143,7 @@
             </button>
           </div>
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge de Personalització" src="images/featuresSettings.png" class="w-16 h-16">
+            <img alt="Imatge de Personalització" src="/images/featuresSettings.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">EXPERIÈNCIA PERSONALITZADA</h3>
             <p class="mt-2 text-gray-600 text-center">
               Gestió de gustos i necessitats.
@@ -154,7 +154,7 @@
             </button>
           </div>
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge d'Anàlisi" src="images/featuresGraphic.png" class="w-16 h-16">
+            <img alt="Imatge d'Anàlisi" src="/images/featuresGraphic.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">ANÀLISI DE DEMANDA</h3>
             <p class="mt-2 text-gray-600 text-center">
               Recomanació d'hores i dies amb menor aglomeració.
@@ -175,7 +175,7 @@
         </p>
         <div class="mt-10 grid gap-8 lg:grid-cols-3">
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge d'Actualització" src="images/actualizar.png" class="w-16 h-16">
+            <img alt="Imatge d'Actualització" src="/images/actualizar.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">ACTUALITZACIÓ EN TEMPS REAL</h3>
             <p class="mt-2 text-gray-600 text-center">
               Mostra totes les reserves en temps real.
@@ -186,7 +186,7 @@
             </button>
           </div>
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge de Personalització" src="images/featuresSettings.png" class="w-16 h-16">
+            <img alt="Imatge de Personalització" src="/images/featuresSettings.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">PERSONALITZA EL RESTAURANT</h3>
             <p class="mt-2 text-gray-600 text-center">
               Gestiona totes les característiques i esdeveniments.
@@ -197,7 +197,7 @@
             </button>
           </div>
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge d'Anàlisi" src="images/featuresGraphic.png" class="w-16 h-16">
+            <img alt="Imatge d'Anàlisi" src="/images/featuresGraphic.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">ANÀLISI DE DEMANDA</h3>
             <p class="mt-2 text-gray-600 text-center">
               Gràfics d'afluència per a una millor gestió.
@@ -226,7 +226,7 @@
 
   <div id="infoActuEmp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
+      <img src="/images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Actualització en Temps Real</h2>
       <p class="text-gray-600 leading-relaxed">
         Amb la funcionalitat de reserves en temps real, la teva empresa tindrà accés immediat a una visió actualitzada de totes les reserves.
@@ -239,7 +239,7 @@
 
   <div id="infoPersEmp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
+      <img src="/images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Personalitza el Restaurant</h2>
       <p class="text-gray-600 leading-relaxed">
         Amb la funcionalitat de personalització del restaurant, pots gestionar fàcilment el menú, l’ambient i els esdeveniments.
@@ -252,7 +252,7 @@
 
   <div id="infoGrafEmp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
+      <img src="/images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Anàlisi de Demanda</h2>
       <p class="text-gray-600 leading-relaxed">
         Accedeix a dades en temps real sobre el volum d’usuaris i ajusta horaris o serveis segons les necessitats.
@@ -265,7 +265,7 @@
 
   <div id="infoActuUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
+      <img src="/images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Actualització en Temps Real</h2>
       <p class="text-gray-600 leading-relaxed">
         Aquesta funcionalitat permet veure les reserves actualitzades en temps real, assegurant quantes taules hi ha disponibles, en quina zona i de quantes persones.
@@ -278,7 +278,7 @@
 
   <div id="infoPersUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
+      <img src="/images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Experiència Personalitzada</h2>
       <p class="text-gray-600 leading-relaxed">
         Personalitza la teva cerca segons opcions de menú, al·lèrgens, rang de preus, tipus de cuina i altres preferències.
@@ -291,7 +291,7 @@
 
   <div id="infoGrafUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
+      <img src="/images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Anàlisi de Demanda</h2>
       <p class="text-gray-600 leading-relaxed">
         Amb l’anàlisi de demanda, podràs saber quins moments són més tranquils, el temps estimat d’espera i l’afluència en temps real.
@@ -324,7 +324,7 @@
     <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-14 max-md:justify-center mt-14">
       <div class="rounded-md overflow-hidden max-md:max-w-[300px] drop-shadow-lg">
         <div class="flex justify-center object-top  max-md:max-w-[300px]">
-        <img src="images/retratDavid.png" class="object-contain h-60 rounded-md  border-2" />
+        <img src="/images/retratDavid.png" class="object-contain h-60 rounded-md  border-2" />
         </div>
         <div class="p-4 bg-white  border">
           <h4 class="text-gray-800 text-base font-bold">David Luis</h4>
@@ -366,7 +366,7 @@
 
       <div class="rounded-md overflow-hidden max-md:max-w-[300px] drop-shadow-lg">
         <div class="flex justify-center object-top  max-md:max-w-[300px]">
-          <img src="images/retratDemian.jpeg" class="object-contain h-60 rounded-md " />
+          <img src="/images/retratDemian.jpeg" class="object-contain h-60 rounded-md " />
         </div>
         <div class="p-4 bg-white  border">
           <h4 class="text-gray-800 text-base font-bold">Demian Turcan</h4>
@@ -408,7 +408,7 @@
 
       <div class="rounded-md overflow-hidden max-md:max-w-[300px] drop-shadow-lg">
         <div class="flex justify-center object-top  max-md:max-w-[300px]">
-          <img src="images/retratAlex.png" class="object-contain h-60 rounded-md  border-2" />
+          <img src="/images/retratAlex.png" class="object-contain h-60 rounded-md  border-2" />
         </div>
         <div class="p-4 bg-white  border">
           <h4 class="text-gray-800 text-base font-bold">Alexander Beltran</h4>
@@ -582,10 +582,10 @@
 
 
 </section>
-<script type="module" src="javascript/accordion-faq.js"></script>
+<script type="module" src="/javascript/accordion-faq.js"></script>
 <!--FINAL FAQ -->
 
-INICI COOKIES
+<!--INICI COOKIES-->
 <div class="cookie-card z-[9999]" id="cookie-notice">
   <span class="title">🍪 Avís de Cookies</span>
   <p class="description">
@@ -624,7 +624,7 @@ INICI COOKIES
 
     <label>
       <input type="checkbox" id="advertising-cookies">
-      📢 Cookies Publicitàries (Mostren anuncis personalitzats)
+      📢 Cookies itàries (Mostren anuncis personalitzats)
     </label><br>
 
     <div class="modal-actions">

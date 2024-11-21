@@ -1,15 +1,16 @@
 import './style.css'
-import '/javascript/scriptCookies.js'
-import '/javascript/accordion-faq.js'
-import '/javascript/scriptCaracterisitques.js'
-import '/javascript/scriptContact.js'
-import '/javascript/scriptLogin.js'
-import '/javascript/scriptNewsletter.js'
-import '/javascript/scriptRegister.js'
-import '/javascript/scriptServeis.js'
-import javascriptLogo from '../images/javascript.svg'
-import viteLogo from '/images/vite.svg'
-import { setupCounter } from './counter.js'
+import '//javascript/scriptCookies.js'
+import '//javascript/accordion-faq.js'
+import '//javascript/scriptCaracterisitques.js'
+import '//javascript/scriptContact.js'
+import '//javascript/scriptLogin.js'
+import '//javascript/scriptNewsletter.js'
+import '//javascript/scriptRegister.js'
+import '//javascript/scriptServeis.js'
+
+// import javascriptLogo from '..//images/javascript.svg'
+// import viteLogo from '//images/vite.svg'
+// import { setupCounter } from './counter.js'
 
 /*
 document.querySelector('#app').innerHTML = `

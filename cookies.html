@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <title>Política de Cookies</title>
     <link rel="stylesheet" href="src/style.css">
-    <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+    <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
     <script type="module">
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('navbar.html')
+            fetch('/navbar.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('navbar-container').innerHTML = data;
                 });
-            fetch('footer.html')
+            fetch('/footer.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('footer-container').innerHTML = data;
+                });
+            fetch('/account.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('account-container').innerHTML = data;
                 });
         });
     </script>

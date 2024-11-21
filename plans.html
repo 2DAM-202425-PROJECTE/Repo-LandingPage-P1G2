@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plans de Pagament</title>
-  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+  <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
   <link rel="stylesheet" href="src/style.css">
-  <script type="module" src="javascript/scriptCookies.js" defer></script>
-  <script type="module" src="javascript/scriptRegister.js" defer></script>
-  <script type="module" src="javascript/scriptLogin.js" defer></script>
-  <script>
+  <script type="module" src="/javascript/scriptCookies.js" defer></script>
+  <script type="module" src="/javascript/scriptRegister.js" defer></script>
+  <script type="module" src="/javascript/scriptLogin.js" defer></script>
+  <script type="module">
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('navbar.html')
+      fetch('/navbar.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
               });
-      fetch('footer.html')
+      fetch('/footer.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
               });
-      fetch('account.html')
+      fetch('/account.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('account-container').innerHTML = data;

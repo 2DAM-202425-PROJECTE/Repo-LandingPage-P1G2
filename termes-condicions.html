@@ -4,20 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+  <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
   <title>Termes i Condicions - TableTab</title>
   <link rel="stylesheet" href="src/style.css">
   <script type="module">
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('navbar.html')
+      fetch('/navbar.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
               });
-      fetch('footer.html')
+      fetch('/footer.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
+              });
+      fetch('/account.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('account-container').innerHTML = data;
               });
     });
   </script>
