@@ -6,3 +6,8 @@ function toggleLoginForm() {
         loginForm.style.display = 'none';
     }
 }
+
+function closeLoginModal() {
+    const loginModal = document.getElementById('login-form');
+    loginModal.style.display = 'none';
+}

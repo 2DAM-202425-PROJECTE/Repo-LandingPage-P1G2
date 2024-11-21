@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
+  <title>Termes i Condicions - TableTab</title>
+  <link rel="stylesheet" href="/estils.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module">
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('/navbar.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+              });
+      fetch('/footer.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+              });
+      fetch('/account.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('account-container').innerHTML = data;
+              });
+    });
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
+
+<header class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+    <div id="navbar-container"></div>
+</header>
+
+<main class="container mx-auto p-8">
+  <h1 class="text-3xl font-semibold mb-4">Termes i Condicions</h1>
+
+  <section class="mb-6">
+    <h2 class="text-2xl font-semibold mb-2">1. Introducció</h2>
+    <p>Els següents termes i condicions regulen l'ús dels serveis de reserva en línia proporcionats per la nostra plataforma. En utilitzar aquest servei, acceptes aquests termes en la seva totalitat.</p>
+  </section>
+
+  <section class="mb-6">
+    <h2 class="text-2xl font-semibold mb-2">2. Usuaris</h2>
+    <p>Per fer ús dels nostres serveis, els usuaris han de ser majors de 18 anys i proporcionar informació veraç i completa al formulari de reserva.</p>
+  </section>
+
+  <section class="mb-6">
+    <h2 class="text-2xl font-semibold mb-2">3. Procediment de Reserva</h2>
+    <p>Per fer una reserva, l'usuari ha d'indicar la data, hora i nombre de persones. Un cop confirmada la reserva, l'usuari rebrà un correu electrònic amb els detalls de la reserva.</p>
+  </section>
+
+  <section class="mb-6">
+    <h2 class="text-2xl font-semibold mb-2">4. Cancel·lacions i Canvis</h2>
+    <p>L'usuari pot cancel·lar o modificar la seva reserva amb un mínim de 24 hores d'antelació. En cas contrari, es podria aplicar una penalització segons les condicions de cada restaurant associat.</p>
+  </section>
+
+  <section class="mb-6">
+    <h2 class="text-2xl font-semibold mb-2">5. Responsabilitat</h2>
+    <p>La plataforma no es fa responsable de cap problema amb les reserves que es produeixin per culpa de la infraestructura del restaurant o altres factors externs fora del nostre control.</p>
+  </section>
+
+  <section class="mb-6">
+    <h2 class="text-2xl font-semibold mb-2">6. Protecció de Dades</h2>
+    <p>Els termes de protecció de dades estan regulats per la nostra <a href="politica-privacitat.html" class="text-sky-500 hover:underline">Política de Privacitat</a>, la qual explica com recopilem, utilitzem i protegim la teva informació personal.</p>
+  </section>
+
+  <section class="mb-6">
+    <h2 class="text-2xl font-semibold mb-2">7. Canvis als Termes</h2>
+    <p>Ens reservem el dret de modificar aquests Termes i Condicions en qualsevol moment. Els canvis seran publicats a aquesta pàgina.</p>
+  </section>
+
+  <section class="mb-6">
+    <h2 class="text-2xl font-semibold mb-2">8. Contacte</h2>
+    <p>Per a qualsevol consulta o dubte sobre aquests termes, pots contactar-nos a: <a href="mailto:suport@restaurant.com" class="text-sky-500 hover:underline">suport@restaurant.com</a>.</p>
+  </section>
+</main>
+
+<!--INICI FOOTER -->
+    <div id="footer-container"></div>
+<!--FINAL FOOTER -->
+
+</body>
+</html>
