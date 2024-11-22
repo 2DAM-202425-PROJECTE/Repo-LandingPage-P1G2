@@ -3,96 +3,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+  <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TableTab</title>
 
   <script type="module" src="src/main.js"></script>
-  <script src="javascript/scriptLogin.js" defer></script>
-  <script src="javascript/scriptRegister.js" defer></script>
-  <script src="javascript/scriptContact.js" defer></script>
-  <script src="javascript/scriptNewsletter.js" defer></script>
-  <script src="javascript/scriptCookies.js" defer></script>
-  <script src="javascript/scriptServeis.js"></script>
+  <script src="/javascript/scriptLogin.js" defer></script>
+  <script src="/javascript/scriptRegister.js" defer></script>
+  <script src="/javascript/scriptContact.js" defer></script>
+  <script src="/javascript/scriptNewsletter.js" defer></script>
+  <script src="/javascript/scriptCookies.js" defer></script>
+  <script src="/javascript/scriptServeis.js" defer></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('navbar.html')
+      fetch('/navbar.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
               });
-      fetch('footer.html')
+      fetch('/footer.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
               });
+      fetch('/account.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('account-container').innerHTML = data;
+              });
     });
   </script>
-  <script src="javascript/scriptCaracterisitques.js"></script>
-  <link rel="stylesheet" href="src/style.css">
-  
+  <script src="/javascript/scriptCaracterisitques.js" defer></script>
+  <link rel="stylesheet" href="/estils.css">
+  <link rel="stylesheet" href="style.css">
+
 
 </head>
 
 <!--INICI HEADER -->
 <body>
 
-
+<div class="sticky top-0 z-10">
   <div id="navbar-container"></div>
-
+</div>
 
 <!--FINAL HEADER -->
 
 
 <div class='absolute pointer-events-none inset-0 blur-[100px] max-w-md h-[100px] mx-auto sm:max-w-3xl sm:h-[400px]' style="background: linear-gradient(200.89deg, rgba(169,77,255,0.24) 15.73%, rgba(56,190,255,0.36) 15.74%, rgba(238,75,255,0.24) 56.49%, rgba(79,70,229,0.44) 150.91%)"></div>
 
-<!--LOGIN-->
-<div id="login-form" style="display: none;">
-  <form class="form">
-    <p id="heading">Login</p>
-    <div class="field">
-      <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"></path>
-      </svg>
-      <input autocomplete="off" placeholder="Username" class="input-field" type="text">
-    </div>
-    <div class="field">
-      <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
-      </svg>
-      <input placeholder="Password" class="input-field" type="password">
-    </div>
-    <div class="btn">
-      <button class="button1">Login</button>
-      <button id="register-button" class="mt-4 text-blue-500 cursor-pointer hover:underline" onclick="openRegisterModal(event)">Sign Up</button>    </div>
-  </form>
-</div>
-<!--END OF LOGIN-->
+  <div id="account-container"></div>
 
-<!-- REGISTER -->
-<div id="register-modal" style="display: none;">
-  <form class="form">
-    <h2 id="heading">Register</h2>
-    <div class="field">
-      <input type="text" id="register-username" name="username" class="input-field" placeholder="Username">
-    </div>
-    <div class="field">
-      <input type="password" id="register-password" name="password" class="input-field" placeholder="Password">
-    </div>
-    <div class="field">
-      <input type="email" id="register-email" name="email" class="input-field" placeholder="Email">
-    </div>
-    <div class="btn">
-      <input type="submit" value="Register" class="button1">
-      <button id="close-modal" class="button2" onclick="closeRegisterModal()">Close</button>
-    </div>
-  </form>
-
-</div>
-<!-- FI REGISTER -->
-
-
-<!--INICI HERO -->
+  <!--INICI HERO -->
 <section class="sm:mt-6 lg:mt-8 mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
   <div class="my-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row">
@@ -107,7 +69,7 @@
       <!-- Button Section -->
       <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
         <div class="rounded-md shadow">
-          <a href="plans.html"
+          <a href="/plans.html"
              class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10">
             Comença
           </a>
@@ -171,7 +133,7 @@
         </p>
         <div class="mt-10 grid gap-8 lg:grid-cols-3">
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge d'Actualització" src="images/actualizar.png" class="w-16 h-16">
+            <img alt="Imatge d'Actualització" src="/images/actualizar.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">ACTUALITZACIÓ EN TEMPS REAL</h3>
             <p class="mt-2 text-gray-600 text-center">
               Mostra les taules disponibles per reservar.
@@ -182,7 +144,7 @@
             </button>
           </div>
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge de Personalització" src="images/featuresSettings.png" class="w-16 h-16">
+            <img alt="Imatge de Personalització" src="/images/featuresSettings.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">EXPERIÈNCIA PERSONALITZADA</h3>
             <p class="mt-2 text-gray-600 text-center">
               Gestió de gustos i necessitats.
@@ -193,7 +155,7 @@
             </button>
           </div>
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge d'Anàlisi" src="images/featuresGraphic.png" class="w-16 h-16">
+            <img alt="Imatge d'Anàlisi" src="/images/featuresGraphic.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">ANÀLISI DE DEMANDA</h3>
             <p class="mt-2 text-gray-600 text-center">
               Recomanació d'hores i dies amb menor aglomeració.
@@ -214,7 +176,7 @@
         </p>
         <div class="mt-10 grid gap-8 lg:grid-cols-3">
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge d'Actualització" src="images/actualizar.png" class="w-16 h-16">
+            <img alt="Imatge d'Actualització" src="/images/actualizar.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">ACTUALITZACIÓ EN TEMPS REAL</h3>
             <p class="mt-2 text-gray-600 text-center">
               Mostra totes les reserves en temps real.
@@ -225,7 +187,7 @@
             </button>
           </div>
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge de Personalització" src="images/featuresSettings.png" class="w-16 h-16">
+            <img alt="Imatge de Personalització" src="/images/featuresSettings.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">PERSONALITZA EL RESTAURANT</h3>
             <p class="mt-2 text-gray-600 text-center">
               Gestiona totes les característiques i esdeveniments.
@@ -236,7 +198,7 @@
             </button>
           </div>
           <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-2xl min-h-[270px]">
-            <img alt="Imatge d'Anàlisi" src="images/featuresGraphic.png" class="w-16 h-16">
+            <img alt="Imatge d'Anàlisi" src="/images/featuresGraphic.png" class="w-16 h-16">
             <h3 class="text-lg font-bold text-gray-800 mt-4">ANÀLISI DE DEMANDA</h3>
             <p class="mt-2 text-gray-600 text-center">
               Gràfics d'afluència per a una millor gestió.
@@ -265,7 +227,7 @@
 
   <div id="infoActuEmp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
+      <img src="/images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Actualització en Temps Real</h2>
       <p class="text-gray-600 leading-relaxed">
         Amb la funcionalitat de reserves en temps real, la teva empresa tindrà accés immediat a una visió actualitzada de totes les reserves.
@@ -278,7 +240,7 @@
 
   <div id="infoPersEmp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
+      <img src="/images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Personalitza el Restaurant</h2>
       <p class="text-gray-600 leading-relaxed">
         Amb la funcionalitat de personalització del restaurant, pots gestionar fàcilment el menú, l’ambient i els esdeveniments.
@@ -291,7 +253,7 @@
 
   <div id="infoGrafEmp" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
+      <img src="/images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Anàlisi de Demanda</h2>
       <p class="text-gray-600 leading-relaxed">
         Accedeix a dades en temps real sobre el volum d’usuaris i ajusta horaris o serveis segons les necessitats.
@@ -304,7 +266,7 @@
 
   <div id="infoActuUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
+      <img src="/images/actualizar.png" alt="Actualització" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Actualització en Temps Real</h2>
       <p class="text-gray-600 leading-relaxed">
         Aquesta funcionalitat permet veure les reserves actualitzades en temps real, assegurant quantes taules hi ha disponibles, en quina zona i de quantes persones.
@@ -317,7 +279,7 @@
 
   <div id="infoPersUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
+      <img src="/images/featuresSettings.png" alt="Personalització" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Experiència Personalitzada</h2>
       <p class="text-gray-600 leading-relaxed">
         Personalitza la teva cerca segons opcions de menú, al·lèrgens, rang de preus, tipus de cuina i altres preferències.
@@ -330,7 +292,7 @@
 
   <div id="infoGrafUsr" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
-      <img src="images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
+      <img src="/images/featuresGraphic.png" alt="Anàlisi" class="w-20 h-20 mx-auto">
       <h2 class="text-2xl font-bold text-gray-800">Anàlisi de Demanda</h2>
       <p class="text-gray-600 leading-relaxed">
         Amb l’anàlisi de demanda, podràs saber quins moments són més tranquils, el temps estimat d’espera i l’afluència en temps real.
@@ -363,7 +325,7 @@
     <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-14 max-md:justify-center mt-14">
       <div class="rounded-md overflow-hidden max-md:max-w-[300px] drop-shadow-lg">
         <div class="flex justify-center object-top  max-md:max-w-[300px]">
-        <img src="https://readymadeui.com/team-1.webp" class="object-contain h-60 rounded-md  border-2" />
+        <img src="/images/retratDavid.png" class="object-contain h-60 rounded-md  border-2" />
         </div>
         <div class="p-4 bg-white  border">
           <h4 class="text-gray-800 text-base font-bold">David Luis</h4>
@@ -374,7 +336,7 @@
               La seva atenció al detall garanteix que tinguem una presència en línia atractiva i funcional.</p>
           </div>
 
-          <div class="space-x-4 mt-4">
+          <div class="flex justify-center space-x-4 mt-4">
             <button type="button"
                     class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
               <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 155.139 155.139">
@@ -405,7 +367,7 @@
 
       <div class="rounded-md overflow-hidden max-md:max-w-[300px] drop-shadow-lg">
         <div class="flex justify-center object-top  max-md:max-w-[300px]">
-          <img src="https://readymadeui.com/team-2.webp" class="object-contain h-60 rounded-md " />
+          <img src="/images/retratDemian.jpeg" class="object-contain h-60 rounded-md " />
         </div>
         <div class="p-4 bg-white  border">
           <h4 class="text-gray-800 text-base font-bold">Demian Turcan</h4>
@@ -416,7 +378,7 @@
               La seva passió pel disseny es tradueix en una aplicació preciosa i fàcil de navegar.</p>
           </div>
 
-          <div class="space-x-4 mt-4">
+          <div class="flex justify-center space-x-4 mt-4">
             <button type="button"
                     class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
               <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 155.139 155.139">
@@ -447,7 +409,7 @@
 
       <div class="rounded-md overflow-hidden max-md:max-w-[300px] drop-shadow-lg">
         <div class="flex justify-center object-top  max-md:max-w-[300px]">
-          <img src="https://readymadeui.com/team-5.webp" class="object-contain h-60 rounded-md  border-2" />
+          <img src="/images/retratAlex.png" class="object-contain h-60 rounded-md  border-2" />
         </div>
         <div class="p-4 bg-white  border">
           <h4 class="text-gray-800 text-base font-bold">Alexander Beltran</h4>
@@ -458,7 +420,9 @@
               La seva experiència tècnica ajuda a portar les nostres idees a la realitat.</p>
           </div>
 
-          <div class="space-x-4 mt-4">
+          <div class="flex justify-center space-x-4 mt-4 ">
+
+
             <button type="button"
                     class="w-7 h-7 inline-flex items-center justify-center rounded-full border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
               <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 155.139 155.139">
@@ -573,7 +537,7 @@
         <div id="answer5" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
           <p>
             Oferim diferents plans de subscripció adaptats a les necessitats de l'usuari i el restaurant.
-            Consulta la nostra secció de preus per més informació.
+            Consulta la nostra <a onclick="window.location.href='/plans.html'" style="text-decoration: underline; color: blue; cursor: pointer;">secció de preus</a> per més informació.
         </div>
       </div>
 
@@ -588,7 +552,8 @@
         </button>
         <div id="answer7" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
           <p>
-            Oferim suport al client a través de correu electrònic, xat en viu i telèfon. Els detalls de contacte estan disponibles a la nostra secció de suport.
+            Oferim suport al client a través de correu electrònic, xat en viu i telèfon. Els detalls de contacte estan disponibles a la nostra
+            <a onclick="window.location.href='/contact.html'" style="text-decoration: underline; color: blue; cursor: pointer;">secció de suport</a>.
         </div>
       </div>
 
@@ -605,19 +570,17 @@
 
 
 </section>
-
-<script src="javascript/accordion-faq.js"></script>
-
+<script type="module" src="/javascript/accordion-faq.js"></script>
 <!--FINAL FAQ -->
 
-<!--INICI COOKIES -->
+<!--INICI COOKIES-->
 <div class="cookie-card z-[9999]" id="cookie-notice">
   <span class="title">🍪 Avís de Cookies</span>
   <p class="description">
     Utilitzem cookies per assegurar-nos que et donem la millor experiència al nostre lloc web.
     Les cookies són petits fitxers de text que es guarden al teu dispositiu i s'utilitzen per
     personalitzar la teva experiència, analitzar el trànsit del lloc web i garantir el bon funcionament del nostre lloc.
-    <a href="cookies.html">Llegeix les nostres polítiques de cookies</a>.
+    <a href="public/cookies.html">Llegeix les nostres polítiques de cookies</a>.
   </p>
   <div class="actions">
     <button class="accept" onclick="acceptCookies()">✅ Acceptar</button>
@@ -649,7 +612,7 @@
 
     <label>
       <input type="checkbox" id="advertising-cookies">
-      📢 Cookies Publicitàries (Mostren anuncis personalitzats)
+      📢 Cookies itàries (Mostren anuncis personalitzats)
     </label><br>
 
     <div class="modal-actions">
@@ -662,20 +625,27 @@
 
 
 <!--INICI NEWSLETTER -->
-<div class="newsletter-popup" id="newsletter-popup">
-  <div class="header">
-    <h3>Newsletter</h3>
-    <button class="close-btn" onclick="closeNewsletterPopup()">×</button>
+  <div class="newsletter-popup" id="newsletter-popup">
+    <div class="header">
+      <h2>Subscriu-te al Newsletter ✉️</h2>
+      <button class="close-btn" onclick="closeNewsletterPopup()">×</button>
+    </div>
+    <div class="newsletter-container">
+      <p>Estigues al dia amb les nostres últimes notícies i ofertes.</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="thank-you-message hidden" id="thank-you-message">
+      <div class="tick-animation">
+        <svg viewBox="0 0 24 24">
+          <path d="M9 16.2l-3.5-3.5 1.4-1.4L9 13.4l7.1-7.1 1.4 1.4z"></path>
+        </svg>
+        <p>Thank you for subscribing!</p>
+      </div>
+    </div>
   </div>
-  <div class="newsletter-container">
-    <h2>📩 Subscriu-te al nostre newsletter!</h2>
-    <p>Mantén-te informat de totes les novetats i ofertes exclusives.</p>
-    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit">Subscriu-me ara!</button>
-    </form>
-  </div>
-</div>
 <!--FINAL NEWSLETTER -->
 
 <!--INICI FOOTER -->

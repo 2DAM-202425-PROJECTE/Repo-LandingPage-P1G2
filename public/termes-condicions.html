@@ -4,29 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" type="image/svg+xml" href="images/logoIcon.png" />
+  <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
   <title>Termes i Condicions - TableTab</title>
-  <link rel="stylesheet" href="src/style.css">
-  <script>
+  <link rel="stylesheet" href="/estils.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module">
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('navbar.html')
+      fetch('/navbar.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
               });
-      fetch('footer.html')
+      fetch('/footer.html')
               .then(response => response.text())
               .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
+              });
+      fetch('/account.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('account-container').innerHTML = data;
               });
     });
   </script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
 
-<header class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+<div class="sticky top-0 z-10">
     <div id="navbar-container"></div>
-</header>
+</div>
 
 <main class="container mx-auto p-8">
   <h1 class="text-3xl font-semibold mb-4">Termes i Condicions</h1>
