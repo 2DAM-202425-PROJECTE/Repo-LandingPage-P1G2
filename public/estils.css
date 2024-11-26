@@ -813,6 +813,25 @@ button {
 
 /****** FI ESTILS COOKIES ********/
 
+/****** ESTILS DEL FONS DE DIAPOSITIVES SVG ********/
+
+.background-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Assegura que el SVG estigui darrere d'altres continguts */
+}
+
+#serveis2 {
+  position: relative;
+  z-index: 1; /* Assegura que la secció serveis estigui per sobre del SVG */
+}
+/****** FI ESTILS DEL FONS DE DIAPOSITIVES SVG ********/
+
+
+
 /****** ESTILS DELS SERVEIS ********/
 .diapositiva {
   position: absolute; /* Manté totes les diapositives al mateix lloc */
