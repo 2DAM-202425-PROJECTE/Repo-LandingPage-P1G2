@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - TableTab</title>
-  <script type="module" src="/javascript/scriptContact.js" defer></script>
-  <script type="module" src="/javascript/scriptCookies.js" defer></script>
-  <script type="module" src="/javascript/scriptRegister.js" defer></script>
-  <script type="module" src="/javascript/scriptLogin.js" defer></script>
-  <link rel="stylesheet" href="/estils.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
-  <script type="module">
+  <title>Contact Us</title>
+  <script type="module" src="src/main.js"></script>
+  <script src="/javascript/scriptLogin.js" defer></script>
+  <script src="/javascript/scriptRegister.js" defer></script>
+  <script src="/javascript/scriptContact.js" defer></script>
+  <script src="/javascript/scriptNewsletter.js" defer></script>
+  <script src="/javascript/scriptCookies.js" defer></script>
+  <script src="/javascript/scriptServeis.js" defer></script>
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
       fetch('/navbar.html')
               .then(response => response.text())
@@ -31,14 +31,20 @@
               });
     });
   </script>
+  <script src="/javascript/scriptCaracterisitques.js" defer></script>
+  <link rel="stylesheet" href="/estils.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-<!--INICI HEADER -->
-<div id="navbar-container"></div>
-<!--FINAL HEADER -->
 
+<!--INICI HEADER -->
+<div class="sticky top-0 z-10">
+  <div id="navbar-container"></div>
+</div>
+<!--FINAL HEADER -->
 <div id="account-container"></div>
+
 
 <div class="contact-page bg-gray-100 py-16">
   <div class="contact-container mx-auto max-w-screen-lg flex flex-wrap items-center justify-between bg-white shadow-lg rounded-lg p-10">

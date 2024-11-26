@@ -6,9 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
   <title>Termes i Condicions - TableTab</title>
-  <link rel="stylesheet" href="/estils.css">
-  <link rel="stylesheet" href="style.css">
-  <script type="module">
+  <script type="module" src="src/main.js"></script>
+  <script src="/javascript/scriptLogin.js" defer></script>
+  <script src="/javascript/scriptRegister.js" defer></script>
+  <script src="/javascript/scriptContact.js" defer></script>
+  <script src="/javascript/scriptNewsletter.js" defer></script>
+  <script src="/javascript/scriptCookies.js" defer></script>
+  <script src="/javascript/scriptServeis.js" defer></script>
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
       fetch('/navbar.html')
               .then(response => response.text())
@@ -27,12 +32,17 @@
               });
     });
   </script>
+  <script src="/javascript/scriptCaracterisitques.js" defer></script>
+  <link rel="stylesheet" href="/estils.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
 
 <div class="sticky top-0 z-10">
     <div id="navbar-container"></div>
 </div>
+
+<div id="account-container"></div>
 
 <main class="container mx-auto p-8">
   <h1 class="text-3xl font-semibold mb-4">Termes i Condicions</h1>
