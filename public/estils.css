@@ -859,9 +859,9 @@ button {
   opacity: 0;
 }
 
-.relative {
+.serveis {
   position: relative; /* El contenidor té un context de posicionament */
-  height: 400px; /* O l'alçada que necessitis per a les diapositives */
+  height: 480px; /* O l'alçada que necessitis per a les diapositives */
   overflow: hidden; /* Evita que es vegin diapositives fora del contenidor */
 }
 
@@ -953,4 +953,3 @@ button {
 
 
 /********** FI ESTILS DELS PLANS **********/
-
