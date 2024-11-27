@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="/estils.css">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="/javascript/scriptCookies.js" defer></script>
-  <script type="module" src="/javascript/scriptRegister.js" defer></script>
-  <script type="module" src="/javascript/scriptLogin.js" defer></script>
+  <script src="/javascript/scriptLogin.js" defer></script>
+  <script src="/javascript/scriptRegister.js" defer></script>
   <script type="module">
     document.addEventListener("DOMContentLoaded", function() {
       fetch('/navbar.html')
@@ -32,7 +32,9 @@
 </head>
 <body class="bg-gray-50">
 
-<div id="navbar-container"></div>
+<div class="sticky top-0 z-10">
+  <div id="navbar-container"></div>
+</div>
 <div id="account-container"></div>
 
 <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -89,7 +91,7 @@
     </div>
   </div>
 
-  </div>
+
 </main>
 <br>
 <br>
