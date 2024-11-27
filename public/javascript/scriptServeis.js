@@ -16,7 +16,7 @@ function canviarDiapositiva(direccio) {
     // Prepara la següent diapositiva per a l'animació
     seguent.classList.remove("hidden");
     seguent.classList.add("entrant");
-
+ 
     // Aplica l'animació a la diapositiva actual
     actual.classList.add("sortint");
 
