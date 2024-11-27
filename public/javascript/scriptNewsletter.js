@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.newsletter-form'); // Formulari del newsletter
     const emailInput = document.querySelector('#correu'); // Input de correu
     const thankYouMessage = document.getElementById('thank-you-message');
@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.getElementById('close-btn');
 
     // Afegir l'esdeveniment de 'submit' al formulari
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', function (event) {
         subscribeNewsletter(event);
     });
 
     // Afegir l'esdeveniment de 'click' al botó de tancar
-    closeBtn.addEventListener('click', function() {
+    closeBtn.addEventListener('click', function () {
         closeNewsletterPopup();
     });
 
@@ -29,7 +29,26 @@ document.addEventListener('DOMContentLoaded', function() {
         newsletterContainer.classList.add('hidden');
         thankYouMessage.classList.remove('hidden');
 
-        // Simular que s'envia el correu al servidor
+        // Enviar la petició AJAX al servidor PHP per processar l'enviament de correu
+        fetch('/public/php/newsLetter.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `correu=${encodeURIComponent(correu)}` // Correu enviat al PHP
+        })
+            .then(response => response.json()) // Resposta JSON del servidor
+            .then(data => {
+                if (data.success) {
+                    console.log('Correu enviat correctament');
+                } else {
+                    alert(data.message); // Mostrar missatge d'error
+                }
+            })
+            .catch(error => {
+                alert('Error al comunicar-se amb el servidor');
+                console.error(error);
+            });
+
+        // Simular un tancament de missatge després de 3 segons (opcional)
         setTimeout(() => {
             thankYouMessage.classList.add('hidden');
             newsletterContainer.classList.remove('hidden');

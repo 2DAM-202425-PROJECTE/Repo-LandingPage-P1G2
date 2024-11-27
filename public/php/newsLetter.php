@@ -5,39 +5,40 @@
    al NewsLetter
    Made by Alexander Beltran
 */
-
+// Inclou PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php'; // Incloure PHPMailer
+require '/path/to/vendor/autoload.php'; // Assegura't que la ruta sigui correcta al teu autoload.php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Mirem si la petició és POST
-    $correu = $_POST['correu'] ?? ''; // Obtenim el correu de la petició
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $correu = $_POST['correu'] ?? ''; // Obtenir el correu de la petició
 
-    if (!filter_var($correu, FILTER_VALIDATE_EMAIL)) { // Validem el correu
-        echo json_encode(['success' => false, 'message' => 'Correu electrònic no vàlid.']); // Si no és vàlid, retornem un error
+    // Validar correu electrònic
+    if (!filter_var($correu, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['success' => false, 'message' => 'Correu electrònic no vàlid.']);
         exit;
     }
 
     // Funció que envia el correu
     function enviarCorreu($correu) {
-        $mail = new PHPMailer(true); // Creem una nova instància de PHPMailer
+        $mail = new PHPMailer(true); // Crear una nova instància de PHPMailer
 
         try {
-            $mail->isSMTP(); // Indiquem que utilitzarem SMTP
+            $mail->isSMTP();
             $mail->Host = 'smtp.mail.yahoo.com'; // Host de Yahoo
-            $mail->SMTPAuth = true; // Habilitar autenticació SMTP
+            $mail->SMTPAuth = true;
             $mail->Username = 'tabletabcontact@yahoo.com'; // Correu des d'on enviem
-            $mail->Password = 'Grup2MP13'; // Contrasenya del correu
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Encriptació del missatge (STARTTLS per Yahoo)
-            $mail->Port = 587; // Port per SMTP amb STARTTLS
+            $mail->Password = 'Grup2MP13'; // Contrasenya
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
 
-            $mail->setFrom('elteucorreu@yahoo.com', 'El teu nom o empresa'); // Correu i nom de qui envia
-            $mail->addAddress($correu); // Correu on enviem
+            $mail->setFrom('elteucorreu@yahoo.com', 'El teu nom o empresa');
+            $mail->addAddress($correu); // Correu on s'envia
 
-            $mail->isHTML(true); // Habilitar HTML
-            $mail->Subject = 'Benvingut al nostre newsletter!'; // Assumpte del correu
-            $mail->Body = '<h1>Benvingut!</h1><p>Gràcies per confiar amb TableTab!</p>'; // Cos del correu en HTML
-            $mail->AltBody = 'Gràcies per unir-te al nostre newsletter!'; // Cos del correu en text pla
+            $mail->isHTML(true);
+            $mail->Subject = 'Benvingut al nostre newsletter!';
+            $mail->Body    = '<h1>Benvingut!</h1><p>Gràcies per confiar amb TableTab!</p>';
+            $mail->AltBody = 'Gràcies per unir-te al nostre newsletter!';
 
             $mail->send();
             return ['success' => true, 'message' => 'Correu enviat correctament.'];
@@ -46,6 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Mirem si la petició és POST
         }
     }
 
-    $resultat = enviarCorreu($correu); //Cridem al la funcio
+    // Cridar la funció per enviar el correu
+    $resultat = enviarCorreu($correu);
+
+    // Retornar la resposta al client
+    echo json_encode($resultat);
 }
 ?>
