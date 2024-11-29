@@ -17,9 +17,9 @@ function subscribeNewsletter(event) {
     }, 3000);
 }
 
-emailjs.init('user_id_aqui'); //connectem al EmailJS
+emailjs.init('VCN_DzGWa4BBp8nSA'); //connectem al EmailJS
 
-function EnviarCorreu(event) {
+function enviarCorreu(event) {
     event.preventDefault(); //prvenim que envie el formulari
 
     // Obtenim el correu de l'usuari des del formulari
@@ -33,7 +33,7 @@ function EnviarCorreu(event) {
     };
 
     // Enviem el correu passant el servei amb id i el template amb id
-    emailjs.send('service_id_aqui', 'template_id_aqui', templateParams)
+    emailjs.send('service_lv1nlhi', 'template_pyq5tfp', templateParams)
         .then((response) => {
             console.log('Enviat Correctament:', response);
         }, (error) => {
