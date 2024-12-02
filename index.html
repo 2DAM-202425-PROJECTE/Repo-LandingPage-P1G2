@@ -7,55 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>TableTab</title>
     <script type="module" src="src/main.js"></script>
+    <script src="/javascript/navbar.js" defer></script>
     <script src="/javascript/scriptLogin.js" defer></script>
     <script src="/javascript/scriptRegister.js" defer></script>
     <script src="/javascript/scriptContact.js" defer></script>
     <script src="/javascript/scriptNewsletter.js" defer></script>
     <script src="/javascript/scriptCookies.js" defer></script>
     <script src="/javascript/scriptServeis.js" defer></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('/navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar-container').innerHTML = data;
-                });
-            fetch('/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-container').innerHTML = data;
-                });
-            fetch('/account.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('account-container').innerHTML = data;
-                });
-        });
-    </script>
+    <script src="/javascript/navbar.js" defer></script>
+    <script src="/javascript/fetchElements.js" defer></script>
     <script src="/javascript/scriptCaracterisitques.js" defer></script>
     <link rel="stylesheet" href="/estils.css">
     <link rel="stylesheet" href="style.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 
-<!--INICI HEADER -->
+
 <body>
 
+<!--INICI HEADER -->
 <div class="sticky top-0 z-10">
+    <script>
+        $(document).ready(function() {
+            // Load the navbar and execute scripts inside it
+            $('#navbar-container').load('navbar.html', function initialize(response, status, xhr) {
+                if (status === "error") {
+                    console.log("Error loading navbar: " + xhr.status + " " + xhr.statusText);
+                }
+            });
+        });
+    </script>
     <div id="navbar-container"></div>
 </div>
 
 <!--FINAL HEADER -->
 
 
-<div class='absolute pointer-events-none inset-0 blur-[100px] max-w-md h-[100px] mx-auto sm:max-w-3xl sm:h-[400px]'
-     style="background: linear-gradient(200.89deg, rgba(169,77,255,0.24) 15.73%, rgba(56,190,255,0.36) 15.74%, rgba(238,75,255,0.24) 56.49%, rgba(79,70,229,0.44) 150.91%)"></div>
 
 <div id="account-container"></div>
 
 <!--INICI HERO -->
 <section class="sm:mt-6 lg:mt-8 mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class='absolute pointer-events-none inset-0 blur-[100px] max-w-md h-[100px] mx-auto sm:max-w-3xl sm:h-[400px]'
+         style="background: linear-gradient(200.89deg, rgba(169,77,255,0.24) 15.73%, rgba(56,190,255,0.36) 15.74%, rgba(238,75,255,0.24) 56.49%, rgba(79,70,229,0.44) 150.91%)"></div>
 
     <div class="my-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row">
         <div class="relative sm:text-center lg:text-left">
