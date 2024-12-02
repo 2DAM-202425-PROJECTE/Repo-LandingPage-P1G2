@@ -1,15 +1,38 @@
 import emailjs from '@emailjs/browser';
 
-function subscribeNewsletter(event) {
-    event.preventDefault();
+function enviarCorreu(event) {
+    event.preventDefault(); // Evitem que el formulari es recarregui
+
+    // Inicialitzem EmailJS amb la clau pública
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+    // Obtenim el correu de l'usuari des del formulari
+    const userEmail = document.querySelector('input[type="email"]').value;
+
+    // Agafem el nom d'usuari segons el correu que ens passen
+    const userName = userEmail.split('@')[0];
+
+    // Passem els paràmetres del template a EmailJS
+    const templateParams = {
+        to_name: userName,
+    };
+
+    // Enviem el correu passant el servei i el template amb id
+    emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_KEY, import.meta.env.VITE_EMAILJS_TEMPLATE_KEY, templateParams)
+        .then((response) => {
+            console.log('Enviat correctament:', response);
+        })
+        .catch((error) => {
+            console.log('Error:', error);
+        });
+
+    // Mostrem el missatge de gràcies
     const thankYouMessage = document.getElementById('thank-you-message');
     const newsletterContainer = document.querySelector('.newsletter-container');
-
-    // Hide the form and show the thank you message
     newsletterContainer.classList.add('hidden');
     thankYouMessage.classList.remove('hidden');
 
-    // Hide the thank you message after 3 seconds
+    // Amaguem el missatge de gràcies després de 3 segons
     setTimeout(() => {
         thankYouMessage.classList.add('hidden');
         newsletterContainer.classList.remove('hidden');
@@ -17,30 +40,10 @@ function subscribeNewsletter(event) {
     }, 3000);
 }
 
-emailjs.init('VCN_DzGWa4BBp8nSA'); //connectem al EmailJS
+// Afegim el listener al formulari
+document.getElementById('newsletter-form').addEventListener('submit', enviarCorreu);
 
-function enviarCorreu(event) {
-    event.preventDefault(); //prvenim que envie el formulari
-
-    // Obtenim el correu de l'usuari des del formulari
-    const userEmail = document.querySelector('input[type="email"]').value;
-    //Agafem un nom de usuari segons el correu que ems passen.
-    const userName = userEmail.split('@')[0];
-
-    // Passem els paràmetres del tempalte a EmailJS
-    const templateParams = {
-        to_name: userName,
-    };
-
-    // Enviem el correu passant el servei amb id i el template amb id
-    emailjs.send('service_lv1nlhi', 'template_pyq5tfp', templateParams)
-        .then((response) => {
-            console.log('Enviat Correctament:', response);
-        }, (error) => {
-            console.log('Error:', error);
-        });
-}
-
+// Funció per tancar el popup
 function closeNewsletterPopup() {
     const newsletterPopup = document.getElementById('newsletter-popup');
     newsletterPopup.style.display = 'none';
