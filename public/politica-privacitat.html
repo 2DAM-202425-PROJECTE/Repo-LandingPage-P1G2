@@ -10,33 +10,30 @@
     <script src="/javascript/scriptNewsletter.js" defer></script>
     <script src="/javascript/scriptCookies.js" defer></script>
     <script src="/javascript/scriptServeis.js" defer></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('/navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar-container').innerHTML = data;
-                });
-            fetch('/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-container').innerHTML = data;
-                });
-            fetch('/account.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('account-container').innerHTML = data;
-                });
-        });
-    </script>
+    <script src="/javascript/fetchElements.js" defer></script>
     <script src="/javascript/scriptCaracterisitques.js" defer></script>
+    <script src="/javascript/navbar.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/estils.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!--INICI HEADER -->
 <div class="sticky top-0 z-10">
+    <script>
+        $(document).ready(function() {
+            // Load the navbar and execute scripts inside it
+            $('#navbar-container').load('navbar.html', function initialize(response, status, xhr) {
+                if (status === "error") {
+                    console.log("Error loading navbar: " + xhr.status + " " + xhr.statusText);
+                }
+            });
+        });
+    </script>
     <div id="navbar-container"></div>
 </div>
+
+<!--FINAL HEADER -->
 
 <div id="account-container"></div>
 
