@@ -678,6 +678,9 @@ button {
 .hidden {
   display: none;
 }
+.flex {
+  display: flex;
+}
 
 /****** FI ESTILS DEL NEWSLETTER ********/
 
