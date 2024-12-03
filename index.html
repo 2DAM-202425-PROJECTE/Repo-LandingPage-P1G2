@@ -10,9 +10,11 @@
     <script src="/javascript/scriptLogin.js" defer></script>
     <script src="/javascript/scriptRegister.js" defer></script>
     <script src="/javascript/scriptContact.js" defer></script>
-    <script src="/javascript/scriptNewsletter.js" defer></script>
+    <script type="module" src="/javascript/scriptNewsletter.js" defer></script>
     <script src="/javascript/scriptCookies.js" defer></script>
     <script src="/javascript/scriptServeis.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/email.min.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             fetch('/navbar.html')
@@ -692,17 +694,22 @@
 <!--FINAL COOKIES -->
 
 
-<!--INICI NEWSLETTER -->
+<!-- INICI NEWSLETTER -->
 <div class="newsletter-popup" id="newsletter-popup">
     <div class="header">
         <h2>Subscriu-te al Newsletter ✉️</h2>
-        <button class="close-btn" onclick="closeNewsletterPopup()">×</button>
+        <button class="close-btn" id="close-newsletter-popup">×</button>
     </div>
     <div class="newsletter-container">
         <p>Estigues al dia amb les nostres últimes notícies i ofertes.</p>
         <form class="newsletter-form" id="newsletter-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
+            <input
+                    type="email"
+                    id="newsletter-email"
+                    placeholder="Entra el teu correu"
+                    required
+            />
+            <button type="submit">Subscriu-te</button>
         </form>
     </div>
     <div class="thank-you-message hidden" id="thank-you-message">
@@ -710,12 +717,11 @@
             <svg viewBox="0 0 24 24">
                 <path d="M9 16.2l-3.5-3.5 1.4-1.4L9 13.4l7.1-7.1 1.4 1.4z"></path>
             </svg>
-            <p>Thank you for subscribing!</p>
+            <p>Gràcies per subscriure't!</p>
         </div>
     </div>
 </div>
-
-<!--FINAL NEWSLETTER -->
+<!-- FINAL NEWSLETTER -->
 
 <!--INICI FOOTER -->
 <div id="footer-container"></div>

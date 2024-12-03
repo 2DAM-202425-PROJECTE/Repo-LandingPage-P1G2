@@ -1,50 +1,61 @@
-import emailjs from '@emailjs/browser';
+// Espera que la pàgina es carregui completament
+document.addEventListener('DOMContentLoaded', () => {
 
-function enviarCorreu(event) {
-    event.preventDefault(); // Evitem que el formulari es recarregui
+    const VITE_EMAILJS_PUBLIC_KEY="VCN_DzGWa4BBp8nSA";
+    const VITE_EMAILJS_SERVICE_KEY="service_giozyph";
+    const VITE_EMAILJS_TEMPLATE_KEY="template_pyq5tfp";
 
     // Inicialitzem EmailJS amb la clau pública
-    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    emailjs.init(VITE_EMAILJS_PUBLIC_KEY);
 
-    // Obtenim el correu de l'usuari des del formulari
-    const userEmail = document.querySelector('input[type="email"]').value;
+    function enviarCorreu(event) {
+        event.preventDefault(); // Evitem que el formulari es recarregui
 
-    // Agafem el nom d'usuari segons el correu que ens passen
-    const userName = userEmail.split('@')[0];
+        // Obtenim el correu de l'usuari des del formulari
+        const userEmail = document.getElementById('newsletter-email').value;
 
-    // Passem els paràmetres del template a EmailJS
-    const templateParams = {
-        to_name: userName,
-    };
+        // Agafem el nom d'usuari segons el correu que ens passen
+        const userName = userEmail.split('@')[0];
 
-    // Enviem el correu passant el servei i el template amb id
-    emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_KEY, import.meta.env.VITE_EMAILJS_TEMPLATE_KEY, templateParams)
-        .then((response) => {
-            console.log('Enviat correctament:', response);
-        })
-        .catch((error) => {
-            console.log('Error:', error);
-        });
+        // Passem els paràmetres del template a EmailJS
+        const templateParams = {
+            to_name: userName,
+            to_email: userEmail
+        };
 
-    // Mostrem el missatge de gràcies
-    const thankYouMessage = document.getElementById('thank-you-message');
-    const newsletterContainer = document.querySelector('.newsletter-container');
-    newsletterContainer.classList.add('hidden');
-    thankYouMessage.classList.remove('hidden');
+        // Enviem el correu passant el servei i el template amb id
+        emailjs.send(
+            VITE_EMAILJS_SERVICE_KEY,
+            VITE_EMAILJS_TEMPLATE_KEY,
+            templateParams
+        )
+            .then((response) => {
+                console.log('Enviat correctament:', response);
+            })
+            .catch((error) => {
+                console.log('Error:', error);
+            });
 
-    // Amaguem el missatge de gràcies després de 3 segons
-    setTimeout(() => {
-        thankYouMessage.classList.add('hidden');
-        newsletterContainer.classList.remove('hidden');
-        closeNewsletterPopup();
-    }, 3000);
-}
+        // Mostrem el missatge de gràcies
+        const thankYouMessage = document.getElementById('thank-you-message');
+        const newsletterContainer = document.querySelector('.newsletter-container');
+        newsletterContainer.classList.add('hidden');
+        thankYouMessage.classList.remove('hidden');
 
-// Afegim el listener al formulari
-document.getElementById('newsletter-form').addEventListener('submit', enviarCorreu);
+        // Amaguem el missatge de gràcies després de 3 segons
+        setTimeout(() => {
+            thankYouMessage.classList.add('hidden');
+            newsletterContainer.classList.remove('hidden');
+            closeNewsletterPopup();
+        }, 3000);
+    }
 
-// Funció per tancar el popup
-function closeNewsletterPopup() {
-    const newsletterPopup = document.getElementById('newsletter-popup');
-    newsletterPopup.style.display = 'none';
-}
+    // Afegim el listener al formulari
+    document.getElementById('newsletter-form').addEventListener('submit', enviarCorreu);
+
+    // Funció per tancar el popup
+    function closeNewsletterPopup() {
+        const newsletterPopup = document.getElementById('newsletter-popup');
+        newsletterPopup.style.display = 'none';
+    }
+});
