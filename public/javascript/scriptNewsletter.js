@@ -1,4 +1,3 @@
-// Espera que la pàgina es carregui completament
 document.addEventListener('DOMContentLoaded', () => {
 
     const VITE_EMAILJS_PUBLIC_KEY="VCN_DzGWa4BBp8nSA";
