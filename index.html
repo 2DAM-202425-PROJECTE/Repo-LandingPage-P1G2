@@ -79,30 +79,34 @@
         <!--   Image Section     -->
         <div class="relative lg:inset-y-0 lg:right-0 lg:w-1/2 my-4 grid lg:grid-cols-2 sm:grid-cols-1 gap-14 mt-14" id="serveis">
             <!-- Pla Gratuït -->
-            <div class="pla-gratuït-box p-6 bg-gray-100 bg-opacity-40 rounded-lg shadow-lg text-center">
+            <div class="pla-gratuït-box p-6 bg-gray-100 bg-opacity-40 rounded-lg shadow-lg text-center flex flex-col">
                 <h3 class="text-2xl font-bold text-gray-800">Pla Gratuït</h3>
-                <p class="mt-2 text-gray-600">Accés bàsic a les funcionalitats</p>
+                <p class="mt-2 text-gray-600">♦ Accés bàsic a les funcionalitats</p>
                 <ul class="mt-4 space-y-2">
-                    <li class="text-gray-600">Creació de compte</li>
-                    <li class="text-gray-600">Reserves en temps real</li>
-                    <li class="text-gray-600">Confirmació per correu electrònic</li>
+                    <li class="text-gray-600">♦ Creació de compte</li>
+                    <li class="text-gray-600">♦ Reserves en temps real</li>
+                    <li class="text-gray-600">♦ Confirmació per correu electrònic</li>
                 </ul>
-                <button class="mt-6 pla-gratuït-button bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-transform transform hover:scale-105" onclick="toggleLoginForm()">
-                    Tria Gratuït
-                </button>
+                <div class="mt-auto"> <!-- Afegeix un contenedor de flex amb mt-auto -->
+                    <button class="mt-6 pla-gratuït-button bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-transform transform hover:scale-105" onclick="toggleLoginForm()">
+                        Tria Gratuït
+                    </button>
+                </div>
             </div>
 
             <!-- Resum Plans Avançats -->
-            <div class="pla-avançat-box p-6 bg-gray-100 bg-opacity-40 rounded-lg shadow-lg text-center">
+            <div class="pla-avançat-box p-6 bg-gray-100 bg-opacity-40 rounded-lg shadow-lg text-center flex flex-col">
                 <h3 class="text-2xl font-bold text-gray-800">Plans Avançats</h3>
                 <p class="mt-2 text-gray-600">
-                    Descobreix els nostres plans avançats per accedir a funcionalitats professionals com estadístiques
+                    ♦ Descobreix els nostres plans avançats per accedir a funcionalitats professionals com estadístiques
                     detallades, suport prioritari i integracions personalitzades.
                 </p>
-                <button onclick="window.location.href='/plans.html'"
-                        class="mt-6 pla-avançat-button bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-transform transform hover:scale-105">
-                    Veure Plans
-                </button>
+                <div class="mt-auto"> <!-- Afegeix un contenedor de flex amb mt-auto -->
+                    <button onclick="window.location.href='/plans.html'"
+                            class="mt-6 pla-avançat-button bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-transform transform hover:scale-105">
+                        Veure Plans
+                    </button>
+                </div>
             </div>
         </div>
 
