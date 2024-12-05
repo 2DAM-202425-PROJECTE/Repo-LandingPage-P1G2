@@ -30,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
         )
             .then((response) => {
                 console.log('Enviat correctament:', response);
+                // Mostrem un avís d'èxit
+                alert('Formulari enviat correctament!');
+
+                //Reiniciar els camps del formulari
+                document.getElementById('formulari-contacte').reset();
             })
             .catch((error) => {
                 console.log('Error:', error);
