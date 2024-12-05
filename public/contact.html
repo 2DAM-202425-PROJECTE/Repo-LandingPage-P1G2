@@ -15,6 +15,7 @@
   <script src="/javascript/fetchElements.js" defer></script>
   <script src="/javascript/scriptCaracterisitques.js" defer></script>
   <script src="/javascript/navbar.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/email.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="/estils.css">
   <link rel="stylesheet" href="style.css">
@@ -51,7 +52,7 @@
     <div class="contact-form flex-1 ml-8">
       <h2 class="form-title text-3xl font-semibold text-gray-800 mb-6">Contacta amb nosaltres</h2>
       <p class="text-gray-600 mb-6">Ens encantaria saber de tu. Si us plau, omple el formulari a continuació i ens posarem en contacte amb tu el més aviat possible.</p>
-      <form>
+      <form id="formulari-contacte">
         <div class="form-group mb-4">
           <label for="name" class="text-sm font-medium text-gray-700">El teu nom</label>
           <input type="text" id="name" placeholder="Introdueix el teu nom" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required />
