@@ -678,9 +678,7 @@ button {
 .hidden {
   display: none;
 }
-.flex {
-  display: flex;
-}
+
 
 /****** FI ESTILS DEL NEWSLETTER ********/
 
@@ -864,10 +862,19 @@ button {
 
 .serveis {
   position: relative; /* El contenidor té un context de posicionament */
-  height: 480px; /* O l'alçada que necessitis per a les diapositives */
+  /*height: 480px; !*O l'alçada que necessitis per a les diapositives *!*/
   overflow: hidden; /* Evita que es vegin diapositives fora del contenidor */
 }
-
+/*
+@media (min-width: 640px) {
+  serveis {
+    height: 1600px;
+  } }
+@media (min-width: 640px) {
+  serveis {
+    height: 1600px;
+  } }
+*/
 /****** FI ESTILS DELS SERVEIS ********/
 
 /****** ESTILS DELS PLANS ********/
