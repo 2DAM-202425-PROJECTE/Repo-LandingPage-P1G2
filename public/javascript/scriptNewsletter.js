@@ -57,4 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newsletterPopup = document.getElementById('newsletter-popup');
         newsletterPopup.style.display = 'none';
     }
+
+    // Afegim el listener al formulari
+    document.getElementById('close-newsletter-popup').addEventListener('click', closeNewsletterPopup);
 });
