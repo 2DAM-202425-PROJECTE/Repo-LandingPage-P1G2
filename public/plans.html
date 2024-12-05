@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" name="description" content="Aquesta Pàgina conte els preus"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plans de Pagament</title>
   <link rel="icon" type="image/svg+xml" href="/images/logoIcon.png" />
@@ -59,7 +59,7 @@
         </ul>
       </div>
       <div class="flex-grow"></div>
-      <button class="plan-button login-button" onclick="toggleLoginForm()">Tria Gratuït</button>
+      <button class="plan-button login-button" aria-label="Tria plan gratuït" onclick="toggleLoginForm()">Tria Gratuït</button>
     </div>
 
     <!-- Pla Premium -->
@@ -77,7 +77,7 @@
         <div class="flex-grow"></div>
       </div>
       <div class="flex-grow"></div>
-      <button class="plan-button" onclick="toggleLoginForm()">Tria Premium</button>
+      <button class="plan-button" aria-label="Tria Plan Permium" onclick="toggleLoginForm()">Tria Premium</button>
     </div>
 
     <!-- Pla Empresarial -->
@@ -95,7 +95,7 @@
         </ul>
       </div>
       <div class="flex-grow"></div>
-      <button class="plan-button" onclick="toggleLoginForm()">Tria Empresarial</button>
+      <button class="plan-button" aria-label="Tria Plan Empresarial" onclick="toggleLoginForm()">Tria Empresarial</button>
     </div>
   </div>
 </main>
@@ -110,11 +110,11 @@
     Utilitzem cookies per assegurar-nos que et donem la millor experiència al nostre lloc web.
     Les cookies són petits fitxers de text que es guarden al teu dispositiu i s'utilitzen per
     personalitzar la teva experiència, analitzar el trànsit del lloc web i garantir el bon funcionament del nostre lloc.
-    <a href="cookies.html">Llegeix les nostres polítiques de cookies</a>.
+    <a href="cookies.html" aria-label="Ves a la secció de cookies">Llegeix les nostres polítiques de cookies</a>.
   </p>
   <div class="actions">
-    <button class="accept" onclick="acceptCookies()">✅ Acceptar</button>
-    <button class="settings" onclick="openCookieSettings()">⚙️ Configuració de Cookies</button>
+    <button class="accept" onclick="acceptCookies()" aria-label="Acceptar">✅ Acceptar</button>
+    <button class="settings" onclick="openCookieSettings()" aria-label="Configuracio">⚙️ Configuració de Cookies</button>
   </div>
 </div>
 
@@ -146,7 +146,7 @@
     </label><br>
 
     <div class="modal-actions">
-      <button onclick="saveCookieSettings()">💾 Guardar Configuració</button>
+      <button onclick="saveCookieSettings()" aria-label="Guardar">💾 Guardar Configuració</button>
     </div>
   </div>
 </div>
