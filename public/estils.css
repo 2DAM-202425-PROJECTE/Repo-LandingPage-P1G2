@@ -256,7 +256,7 @@ button {
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 0.4em;
-  background-color: #171717;
+  background-color: #0d1422;
   border-radius: 25px;
   transition: .4s ease-in-out;
 }
@@ -297,7 +297,7 @@ button {
   border: none;
   outline: none;
   color: white;
-  background-color: #171717;
+  background-color: #101827;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 
@@ -331,7 +331,7 @@ button {
   border: none;
   outline: none;
   transition: .4s ease-in-out;
-  background-color: #252525;
+  background-color: #272732;
   color: white;
 }
 
@@ -348,7 +348,7 @@ button {
   border: none;
   outline: none;
   transition: .4s ease-in-out;
-  background-color: #252525;
+  background-color: #272732;
   color: white;
 }
 
@@ -373,7 +373,7 @@ button {
 }
 
 #register-modal .modal-content {
-  background-color: #171717;
+  background-color: #0d1422;
   border-radius: 25px;
   padding: 2em;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
@@ -424,7 +424,7 @@ button {
   color: #d3d3d3;
   padding: 0.6em;
   border-radius: 25px;
-  background-color: #171717;
+  background-color: #0d1422;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 
@@ -435,7 +435,7 @@ button {
   border: none;
   outline: none;
   transition: .4s ease-in-out;
-  background-color: #252525;
+  background-color: #272732;
   color: white;
   cursor: pointer;
 }
@@ -678,9 +678,7 @@ button {
 .hidden {
   display: none;
 }
-.flex {
-  display: flex;
-}
+
 
 /****** FI ESTILS DEL NEWSLETTER ********/
 
@@ -864,10 +862,19 @@ button {
 
 .serveis {
   position: relative; /* El contenidor té un context de posicionament */
-  height: 480px; /* O l'alçada que necessitis per a les diapositives */
+  /*height: 480px; !*O l'alçada que necessitis per a les diapositives *!*/
   overflow: hidden; /* Evita que es vegin diapositives fora del contenidor */
 }
-
+/*
+@media (min-width: 640px) {
+  serveis {
+    height: 1600px;
+  } }
+@media (min-width: 640px) {
+  serveis {
+    height: 1600px;
+  } }
+*/
 /****** FI ESTILS DELS SERVEIS ********/
 
 /****** ESTILS DELS PLANS ********/
