@@ -1,4 +1,4 @@
-// JavaScript for toggling the mobile menu
+// JavaScript per desplegar menú del mòbil
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu-2');
 const iconOpen = document.getElementById('icon-open');

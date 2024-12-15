@@ -250,6 +250,7 @@ button {
 
 /****** ESTILS DEL LOGIN ********/
 .form {
+
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -259,6 +260,10 @@ button {
   background-color: #171717;
   border-radius: 25px;
   transition: .4s ease-in-out;
+}
+.formlogin{
+  position: fixed;
+  right: 10px;
 }
 
 .form:hover {
@@ -588,6 +593,8 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  max-width: 90%;
+
 }
 
 .newsletter-popup .header {
@@ -627,6 +634,7 @@ button {
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .newsletter-popup .newsletter-form input[type="email"] {
@@ -635,6 +643,7 @@ button {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  max-width: 90%;
 }
 
 .newsletter-popup .newsletter-form button {

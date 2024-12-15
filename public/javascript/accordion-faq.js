@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const answer = button.nextElementSibling; // The div containing the answer
             const arrow = button.querySelector('svg');
 
-            // Toggle the display of the answer
+            // Desplegar quadre de resposta
             answer.style.display = isOpen ? 'none' : 'block';
 
-            // Toggle arrow direction
+            // Activar direcció de la fletxa
             if (isOpen) {
                 arrow.style.transform = 'rotate(0deg)';
                 button.setAttribute('data-state', 'closed');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// JavaScript to toggle the answers and rotate the arrows
+// JavaScript per desplegar les respostes i moure les fletxes
 document.querySelectorAll('[id^="question"]').forEach(function(button, index) {
     button.addEventListener('click', function() {
         const answer = document.getElementById('answer' + (index + 1));
@@ -37,3 +37,4 @@ document.querySelectorAll('[id^="question"]').forEach(function(button, index) {
         }
     });
 });
+
